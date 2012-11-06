@@ -99,14 +99,21 @@ Route::get('admin/settings', array('as' => 'dashboard', function ()
 	return 'settings';
 }));
 
-# Tagged Posts
+# Posts by Tag
 
-Route::get('tagged/(:any)', function ($tag)
+Route::get('tag/(:any)', function ($tag)
 {
 	return 'tagged: ' . $tag;
 });
 
-# Individual Posts
+# Posts by Author
+
+Route::get('author/(:any)', function ($tag)
+{
+	return 'authro: ' . $author;
+});
+
+# Single Post
 
 Route::get('(:any)', function ($slug)
 {

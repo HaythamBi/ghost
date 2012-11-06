@@ -9,7 +9,7 @@ class Init {
 	 */
 	public function up()
 	{
-		Schema::create('users', function($table)
+		Schema::create('authors', function($table)
 		{
 			# primary key
 
@@ -52,7 +52,7 @@ class Init {
 			# foreign keys
 
 			$table->integer('created_by')->unsigned();
-			$table->foreign('created_by')->references('id')->on('users');
+			$table->foreign('created_by')->references('id')->on('authors');
 		});
 
 		Schema::create('tags', function($table)
@@ -107,7 +107,7 @@ class Init {
 	{
 		# Drop tables
 
-		Schema::drop('users');
+		Schema::drop('authors');
 		Schema::drop('posts');
 		Schema::drop('tags');
 		Schema::drop('post_tags');
