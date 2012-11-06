@@ -99,7 +99,7 @@ Route::get('admin', array('as' => 'Dashboard', 'before' => 'auth', function ()
 
 # Posts
 
-Route::get('admin/blog', array('as' => 'Blog', function ()
+Route::get('admin/posts', array('as' => 'Posts', function ()
 {
 	$view = new \Laravel\Fluent(array(
 		'title' => 'Ghost Blog'
@@ -111,7 +111,7 @@ Route::get('admin/blog', array('as' => 'Blog', function ()
 
 # New Post
 
-Route::get('admin/blog/new', array('as' => 'New Post', function ()
+Route::get('admin/posts/new', array('as' => 'New Post', function ()
 {
 	$view = new \Laravel\Fluent(array(
 		'title' => 'Ghost New Post'

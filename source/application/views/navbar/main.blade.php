@@ -2,9 +2,7 @@
 	<div class="navbar-inner">
 		<ul class="nav">
 			{{ HTML::nav_item('Dashboard') }}
-			{{ HTML::nav_item('Blog') }}
-			{{ HTML::nav_item('Authors') }}
-			{{ HTML::nav_item('Analytics') }}
+			{{ HTML::nav_item('Posts') }}
 			{{ HTML::nav_item('Settings') }}
 		</ul>
 		<ul class="nav pull-right">
