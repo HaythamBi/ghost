@@ -65,28 +65,28 @@ i {
 	padding: 6px 0 6px 0;
 }
 
-.listed-post {
+.inline-post {
 	padding-bottom: 12px;
 	margin-bottom: 12px;
 	cursor: pointer;
 	border-bottom: 1px solid #f3f3f3;
 }
 
-.listed-post:last-of-type {
+.inline-post:last-of-type {
 	padding-bottom: 0;
 	margin-bottom: 0;
 	border-bottom: none;
 }
 
-.listed-post .stats {
+.inline-post .stats {
 	text-align: right;
 }
 
-.listed-post .stats h2 {
+.inline-post .stats h2 {
 	margin-top: 0;
 }
 
-.post .stats p {
+.inline-post .stats p {
 	margin-bottom: 0;
 }
 

@@ -1,5 +1,5 @@
 @section('post')
-<div class="listed-post row-fluid">
+<div class="inline-post row-fluid">
 	<div class="span9">
 		<div class="media">
 			<a class="pull-left" href="#">

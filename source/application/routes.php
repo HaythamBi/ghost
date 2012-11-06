@@ -113,19 +113,22 @@ Route::get('admin/posts', array('as' => 'Posts', function ()
 
 Route::get('admin/posts/new', array('as' => 'New Post', function ()
 {
-	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost New Post'
+	$post = Post::create(array(
+		'created_by' => Auth::user()->id
 	));
-	return View::of('layout')
-		->with('view', $view)
-		->with('content', 'New Post');
+	return Redirect::to('admin/posts/' . $post->id);
 }));
 
 # Edit Post
 
 Route::get('admin/posts/(:num)', function ()
 {
-	return 'edit post';
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost Edit Post'
+	));
+	return View::of('layout')
+		->with('view', $view)
+		->with('content', View::make('post.edit'));
 });
 
 # Authors
@@ -137,7 +140,7 @@ Route::get('admin/authors', array('as' => 'Authors', function ()
 	));
 	return View::of('layout')
 		->with('view', $view)
-		->with('content', 'Authors');
+		->with('content', View::make('authors.main'));
 }));
 
 # Edit Author
