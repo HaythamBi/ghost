@@ -55,7 +55,7 @@ return array(
 	|
 	*/
 
-	'model' => 'User',
+	'model' => 'Author',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -68,6 +68,6 @@ return array(
 	|
 	*/
 
-	'table' => 'users',
+	'table' => 'authors',
 
 );

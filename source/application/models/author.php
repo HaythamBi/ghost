@@ -1,6 +1,6 @@
 <?php
 
-class User extends Eloquent {
+class Author extends Eloquent {
 
 	public static $hidden = array('password');
 

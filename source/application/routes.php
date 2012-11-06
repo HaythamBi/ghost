@@ -50,14 +50,14 @@ Route::get('tag/(:any)', function ($tag)
 
 Route::get('author/(:any)', function ($tag)
 {
-	return 'authro: ' . $author;
+	return 'author: ' . $author;
 });
 
 # Single Post
 
 Route::get('(:any)', function ($slug)
 {
-	return $slug;
+	return 'post ' . $slug;
 });
 
 /*
