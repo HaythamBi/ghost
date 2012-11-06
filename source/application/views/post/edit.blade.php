@@ -5,9 +5,9 @@
 			<div class="span12">
 				<div class="block">
 					<input class="post-title" type="text" value="{{ $post->title }}" placeholder="Post Title" />
+					<i class="icon-fullscreen">&#59204;</i>
 				</div>
-				<br>
-				<p class="muted"><strong>Permalink: </strong> {{ HTML::link($post->permalink) }}</p>
+				<p class="muted permalink"><strong>Permalink: </strong> {{ HTML::link($post->permalink) }}</p>
 			</div>
 		</div>
 	</div>

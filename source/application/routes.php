@@ -193,7 +193,9 @@ Route::get('author/(:any)', function ($id)
 
 Route::get('(:any)', function ($slug)
 {
-	return 'post: ' . $slug;
+	$post = Post::where_slug($slug)->first()->to_array();
+
+	dd($post);
 });
 
 /*

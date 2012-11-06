@@ -60,10 +60,19 @@ i {
 }
 
 .block {
+	position: relative;
 	padding: 8px;
 	margin-right: 12px;
 	background: white;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+.icon-fullscreen {
+	position: absolute;
+	top: 22px;
+	right: 16px;
+	cursor: pointer;
+	font-size: 48px;
 }
 
 .posts {
@@ -146,4 +155,8 @@ i {
 	font-size: 28px;
 	line-height: 32px;
 	border: none;
+}
+
+.edit-post .permalink {
+	margin-top: 8px;
 }

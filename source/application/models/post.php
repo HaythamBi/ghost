@@ -4,12 +4,14 @@ class Post extends Eloquent {
 
 	public static $table = 'posts';
 
+	public static $default_title = 'Untitled Post';
+
 	public function __construct($attributes = array(), $exists = false)
 	{
 		$this->exists = $exists;
 
 		$defaults = array(
-			'title'      => 'Untitled Post',
+			'title'      => static::$default_title,
 			'created_by' => \Auth::user()->id
 		);
 
@@ -26,7 +28,7 @@ class Post extends Eloquent {
 	public static function create($attributes = array())
 	{
 		$defaults = array(
-			'title'      => 'Untitled Post',
+			'title'      => static::$default_title,
 			'created_by' => \Auth::user()->id
 		);
 
