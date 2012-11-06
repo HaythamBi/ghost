@@ -62,4 +62,9 @@ class Post extends Eloquent {
 		return $slug;
 	}
 
+	public function get_permalink()
+	{
+		return URL::to($this->slug);
+	}
+
 }

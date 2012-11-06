@@ -6,6 +6,8 @@
 				<div class="block">
 					<input class="post-title" type="text" value="{{ $post->title }}" placeholder="Post Title" />
 				</div>
+				<br>
+				<p class="muted"><strong>Permalink: </strong> {{ HTML::link($post->permalink) }}</p>
 			</div>
 		</div>
 	</div>

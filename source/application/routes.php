@@ -121,7 +121,7 @@ Route::get('admin/posts/new', array('as' => 'New Post', function ()
 
 Route::get('admin/posts/(:num)', function ($id)
 {
-	$post = new \Laravel\Fluent(Post::find($id)->to_array());
+	$post = Post::find($id);
 
 	$view = new \Laravel\Fluent(array(
 		'title' => 'Ghost ' . $post->title
