@@ -28,7 +28,11 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 			editor.renderer.setShowGutter(false);
 			editor.renderer.adjustWrapLimit(10);
 
-			preview.innerHTML = converter.makeHtml(editor.getValue());
+			editor.clearSelection();
+
+			var html = converter.makeHtml(editor.getValue());
+			preview.innerHTML = html;
+			self.wordCount(html);
 
 			editor.getSession().on('change', function(e) {
 				var html = converter.makeHtml(editor.getValue());
