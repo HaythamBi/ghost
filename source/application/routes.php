@@ -1,37 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Simply tell Laravel the HTTP verbs and URIs it should respond to. It is a
-| breeze to setup your application using Laravel's RESTful routing and it
-| is perfectly suited for building large applications and simple APIs.
-|
-| Let's respond to a simple GET request to http://example.com/hello:
-|
-|		Route::get('hello', function()
-|		{
-|			return 'Hello World!';
-|		});
-|
-| You can even respond to more than one URI:
-|
-|		Route::post(array('hello', 'world'), function()
-|		{
-|			return 'Hello World!';
-|		});
-|
-| It's easy to allow URI wildcards using (:num) or (:any):
-|
-|		Route::put('hello/(:any)', function($name)
-|		{
-|			return "Welcome, $name.";
-|		});
-|
-*/
-
 # Views
 
 View::name('layouts.main', 'layout');
@@ -40,8 +8,8 @@ View::name('layouts.main', 'layout');
 
 Asset::add('bootstrap', 'components/bootstrap/css/bootstrap.css');
 Asset::add('stylez', 'css/app/main.css');
-Asset::container('footer')->add('jquery', 'components/jquery/jquery.js');
-Asset::container('footer')->add('bootstrap-js', 'components/bootstrap/js/bootstrap.js');
+
+Asset::container('footer')->add('require', 'components/require/require.js', null, array('data-main' => URL::to_asset('js/app/main.js')));
 
 # Home
 

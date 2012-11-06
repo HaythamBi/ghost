@@ -20,7 +20,7 @@
 						<div class="block-title pull-left">Markdown</div>
 						<div class="block-icons pull-right">...</div>
 					</div>
-					<textarea></textarea>
+					<div id="editor"></div>
 				</div>
 			</div>
 			<div class="span6">
@@ -29,7 +29,7 @@
 						<div class="block-title pull-left">Preview</div>
 						<div class="block-icons pull-right">0 Words</div>
 					</div>
-					<div class="preview">Loading Preview...</div>
+					<div id="preview">Loading Preview...</div>
 				</div>
 			</div>
 		</div>
