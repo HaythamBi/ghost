@@ -18,17 +18,19 @@
 </div><!-- .row-fluid -->
 @endsection
 
-<div class="row-fluid">
-	<div class="span6">
-		<div class="block">
-			<div class="posts">
-				@yield('post')
-				@yield('post')
-				@yield('post')
-			</div><!-- .posts -->
+<div class="blocks">
+	<div class="row-fluid">
+		<div class="span6">
+			<div class="block">
+				<div class="posts">
+					@yield('post')
+					@yield('post')
+					@yield('post')
+				</div><!-- .posts -->
+			</div>
 		</div>
-	</div>
-	<div class="span6">
-		<div class="block">...</div>
+		<div class="span6">
+			<div class="block">...</div>
+		</div>
 	</div>
 </div>
