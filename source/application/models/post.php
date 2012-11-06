@@ -12,6 +12,7 @@ class Post extends Eloquent {
 
 		$defaults = array(
 			'title'      => static::$default_title,
+			'status'     => 'draft',
 			'created_by' => \Auth::user()->id
 		);
 
@@ -29,6 +30,7 @@ class Post extends Eloquent {
 	{
 		$defaults = array(
 			'title'      => static::$default_title,
+			'status'     => 'draft',
 			'created_by' => \Auth::user()->id
 		);
 

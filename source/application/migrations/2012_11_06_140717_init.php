@@ -43,6 +43,7 @@ class Init {
 			# fields
 
 			$table->string('title');
+			$table->string('status');
 			$table->text('content');
 
 			# timestamps
@@ -107,10 +108,10 @@ class Init {
 	{
 		# Drop tables
 
-		Schema::drop('authors');
-		Schema::drop('posts');
-		Schema::drop('tags');
 		Schema::drop('post_tags');
+		Schema::drop('posts');
+		Schema::drop('authors');
+		Schema::drop('tags');
 	}
 
 }
