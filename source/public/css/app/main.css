@@ -18,7 +18,7 @@ i {
 	text-transform: uppercase;
 }
 
-.navbar-main li {
+.navbar-main .active {
 	position: relative;
 	text-align: center;
 }
