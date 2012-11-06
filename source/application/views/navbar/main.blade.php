@@ -1,7 +1,7 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<a class="brand" href="#">G</a>
+			{{ HTML::link_to_route('dashboard', 'G', null, array('class' => 'brand')) }}
 			<ul class="nav">
 				<li class="active">{{ HTML::link_to_route('dashboard', 'Dashboard') }}</li>
 				<li>{{ HTML::link_to_route('posts', 'Posts') }}</li>
