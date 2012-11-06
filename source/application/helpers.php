@@ -3,9 +3,19 @@
 HTML::macro('nav_item', function($title) {
 	$link = HTML::link_to_route($title, $title, array(), array('title' => $title, 'class' => 'uppercase'));
 	if (Request::route()->is($title))
+	{
 		return "<li class='active'>$link</li>";
+	}
+	elseif(URI::is(Str::slug($title) . '/*'))
+	{
+		# the first uri segment matches a slug based on the route title
+		# strictly speaking we aren't on this page, we're in a 'child' route
+		return '<li class="active">' . $link . '</li>';
+	}
 	else
+	{
 		return "<li>$link</li>";
+	}
 });
 
 HTML::macro('data', function($key, $value)
