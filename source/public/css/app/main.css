@@ -1,3 +1,44 @@
+body {
+	font-family: sans-serif;
+	background: #e9e9e9;
+}
+
+.navbar {
+	margin-bottom: 4px;
+}
+
+.navbar a {
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.navbar .active {
+	text-align: center;
+}
+
 .navbar .gravatar {
 	margin-right: 8px;
+}
+
+.row-fluid .span6 {
+	width: 50%;
+}
+
+.row-fluid [class*="span"] {
+	margin: 0;
+}
+
+.row-fluid [class*="span"]:first-of-type .block {
+	margin-left: 8px;
+}
+
+.row-fluid [class*="span"]:last-of-type .block {
+	margin-right: 8px;
+}
+
+.block {
+	padding: 8px;
+	margin: 4px;
+	background: white;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
 }
