@@ -22,6 +22,10 @@
 	<div class="row-fluid">
 		<div class="span6">
 			<div class="block">
+				<div class="block-header muted uppercase">
+					<div class="block-title pull-left">Posts</div>
+					<div class="block-icons pull-right">...</div>
+				</div>
 				<div class="posts">
 					@yield('post')
 					@yield('post')
@@ -29,8 +33,14 @@
 				</div><!-- .posts -->
 			</div>
 		</div>
-		<div class="span6">
-			<div class="block">...</div>
+		<div class="span6 hide">
+			<div class="block">
+				<div class="block-header muted uppercase">
+					<div class="block-title pull-left">Preview</div>
+					<div class="block-icons pull-right">0 Words</div>
+				</div>
+				<div class="preview">Loading Preview</div>
+			</div>
 		</div>
 	</div>
 </div>

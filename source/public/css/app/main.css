@@ -67,6 +67,23 @@ i {
 	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
 }
 
+.block-header {
+	border-bottom: 1px solid #f3f3f3;
+	margin-bottom: 8px;
+	padding-bottom: 8px;
+}
+
+.block-header:after {
+	clear: both;
+	display: table;
+	line-height: 0;
+	content: "";
+}
+
+.block-title {
+	font-size: 14px;
+}
+
 .icon-fullscreen {
 	position: absolute;
 	top: 22px;
