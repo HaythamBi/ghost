@@ -34,7 +34,7 @@ Route::group(array('before' => 'auth'), function()
 
 	Route::get('(:bundle)', array('as' => 'dashboard', 'before' => 'auth', function ()
 	{
-		return 'dashboard';
+		return View::of('layout')->with('content', View::make('admin::dashboard.main'));
 	}));
 
 	# Posts

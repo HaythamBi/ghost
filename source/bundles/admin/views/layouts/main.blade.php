@@ -9,6 +9,7 @@
 		{{ Asset::bundle('admin')->styles() }}
 	</head>
 	<body>
+	@render('admin::navbar.main')
 	{{ $content }}
 	</body>
 </html>
