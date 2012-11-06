@@ -10,7 +10,14 @@ Asset::container('footer')->bundle('admin')->add('bootstrap-js', 'components/boo
 
 Route::get('admin/login', array('as' => 'login', function ()
 {
-	return View::of('layout')->with('content', View::make('admin::login.main'));
+	return View::make('admin::layouts.login')
+		->with('content', View::make('admin::login.main'));
+}));
+
+Route::get('admin/logout', array('as' => 'logout', function ()
+{
+	Auth::logout();
+	return Redirect::to_route('login');
 }));
 
 Route::post('admin/login/do', function ()

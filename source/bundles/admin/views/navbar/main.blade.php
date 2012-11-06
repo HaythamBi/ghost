@@ -15,7 +15,7 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Edit Profile</a></li>
-						<li><a href="#">Logout</a></li>
+						<li>{{ HTML::link_to_route('logout', 'Logout') }}</li>
 					</ul>
 				</li>
 			</ul>
