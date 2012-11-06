@@ -15,27 +15,25 @@
 <div class="blocks">
 	<div class="row-fluid">
 		<div class="span3">
-			<div class="block">...</div>
+			<div class="block">
+				<div class="block-header muted uppercase">
+					<div class="block-title pull-left">{{ Config::get('application.timezone') }}</div>
+				</div>
+			</div>
 		</div>
 		<div class="span6">
-			<div class="block">...</div>
+			<div class="block">
+				<div class="block-header muted uppercase">
+					<div class="block-title pull-left">Top Authors This Month</div>
+				</div>
+			</div>
 		</div>
 		<div class="span3">
-			<div class="block">...</div>
-		</div>
-	</div>
-</div>
-
-<div class="blocks">
-	<div class="row-fluid">
-		<div class="span6">
-			<div class="block">...</div>
-		</div>
-		<div class="span3">
-			<div class="block">...</div>
-		</div>
-		<div class="span3">
-			<div class="block">...</div>
+			<div class="block">
+				<div class="block-header muted uppercase">
+					<div class="block-title pull-left">Post Statuses</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

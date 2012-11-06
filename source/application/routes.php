@@ -172,7 +172,7 @@ Route::get('admin/settings', array('as' => 'Settings', function ()
 	));
 	return View::of('layout')
 		->with('view', $view)
-		->with('content', 'Settings');
+		->with('content', View::make('settings.main'));
 }));
 
 # Posts by Tag
