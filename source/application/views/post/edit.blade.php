@@ -18,7 +18,7 @@
 				<div class="block">
 					<div class="block-header muted uppercase">
 						<div class="block-title pull-left">Markdown</div>
-						<div class="block-icons pull-right">...</div>
+						<div class="block-icons pull-right"><strong><a class="muted" href="http://en.wikipedia.org/wiki/Markdown">?</a></strong></div>
 					</div>
 					<div id="editor"></div>
 				</div>
@@ -27,7 +27,7 @@
 				<div class="block">
 					<div class="block-header muted uppercase">
 						<div class="block-title pull-left">Preview</div>
-						<div class="block-icons pull-right">0 Words</div>
+						<div id="wordcount" class="block-icons align-right"></div>
 					</div>
 					<div id="preview"></div>
 				</div>
