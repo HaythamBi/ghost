@@ -121,7 +121,7 @@ Route::get('admin/posts/new', array('as' => 'New Post', function ()
 
 Route::get('admin/posts/(:num)', function ($id)
 {
-	$post = Post::find($id);
+	$post = new \Laravel\Fluent(Post::find($id)->to_array());
 
 	$view = new \Laravel\Fluent(array(
 		'title' => 'Ghost ' . $post->title
@@ -129,7 +129,7 @@ Route::get('admin/posts/(:num)', function ($id)
 
 	return View::of('layout')
 		->with('view', $view)
-		->with('content', View::make('post.edit'));
+		->with('content', View::make('post.edit')->with('post', $post));
 });
 
 # Authors
