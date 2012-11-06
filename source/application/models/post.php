@@ -4,6 +4,25 @@ class Post extends Eloquent {
 
 	public static $table = 'posts';
 
+	public function __construct($attributes = array(), $exists = false)
+	{
+		$this->exists = $exists;
+
+		$defaults = array(
+			'title'      => 'Untitled Post',
+			'created_by' => \Auth::user()->id
+		);
+
+		$attributes = array_merge($defaults, $attributes);
+
+		if (! $this->exists)
+		{
+			$attributes['slug'] = self::create_slug($attributes['title']);
+		}
+
+		$this->fill($attributes);
+	}
+
 	public static function create($attributes = array())
 	{
 		$defaults = array(

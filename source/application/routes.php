@@ -124,7 +124,7 @@ Route::get('admin/posts/(:num)', function ($id)
 	$post = Post::find($id);
 
 	$view = new \Laravel\Fluent(array(
-		'title' => $post->title
+		'title' => 'Ghost ' . $post->title
 	));
 
 	return View::of('layout')
