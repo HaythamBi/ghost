@@ -48,17 +48,17 @@ Route::group(array('before' => 'auth'), function()
 
 	# Posts
 
-	Route::get('(:bundle)/posts', array('as' => 'blog', function ()
+	Route::get('(:bundle)/posts', array('as' => 'posts', function ()
 	{
 		return 'blog';
 	}));
 
 	# New Post
 
-	Route::get('(:bundle)/posts/new', function ()
+	Route::get('(:bundle)/posts/new', array('as' => 'new post', function ()
 	{
 		return 'new post';
-	});
+	}));
 
 	# Edit Post
 
