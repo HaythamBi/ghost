@@ -36,6 +36,5 @@
 return array(
 
 	'docs' => array('handles' => 'docs'),
-	'admin' => array('handles' => 'admin')
 
 );

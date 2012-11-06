@@ -32,12 +32,110 @@
 |
 */
 
+# Views
+
+View::name('layouts.main', 'layout');
+
+# Assets
+
+Asset::add('bootstrap', 'components/bootstrap/css/bootstrap.css');
+Asset::container('footer')->bundle('admin')->add('jquery', 'components/jquery/jquery.js');
+Asset::container('footer')->bundle('admin')->add('bootstrap-js', 'components/bootstrap/js/bootstrap.js');
+
 # Home
 
 Route::get('/', array('as' => 'home', function()
 {
 	return View::make('home.index');
 }));
+
+Route::get('login', array('as' => 'login', function ()
+{
+	return View::make('layouts.login')
+		->with('content', View::make('login.main'));
+}));
+
+Route::get('logout', array('as' => 'logout', function ()
+{
+	Auth::logout();
+	return Redirect::to_route('login');
+}));
+
+Route::post('login/do', function ()
+{
+	$credentials = array(
+		'username' => Input::get('email'),
+		'password' => Input::get('password')
+	);
+
+	if (Auth::attempt($credentials))
+	{
+		return Redirect::to_route('dashboard');
+	}
+
+	return Redirect::to_route('login');
+});
+
+# Admin Routes
+
+Route::group(array('before' => 'auth'), function()
+{
+	# Dashboard
+
+	Route::get('admin', array('as' => 'dashboard', 'before' => 'auth', function ()
+	{
+		return View::of('layout')->with('content', View::make('dashboard.main'));
+	}));
+
+	# Posts
+
+	Route::get('admin/posts', array('as' => 'posts', function ()
+	{
+		return 'posts';
+	}));
+
+	# New Post
+
+	Route::get('admin/posts/new', array('as' => 'new post', function ()
+	{
+		return 'new post';
+	}));
+
+	# Edit Post
+
+	Route::get('admin/posts/(:num)', function ()
+	{
+		return 'edit post';
+	});
+
+	# Authors
+
+	Route::get('admin/authors', array('as' => 'authors', function ()
+	{
+		return 'authors';
+	}));
+
+	# Edit Author
+
+	Route::get('admin/authors/(:num)', function ($id)
+	{
+		return 'author ' . $id;
+	});
+
+	# Analytics
+
+	Route::get('admin/analytics', array('as' => 'analytics', function ()
+	{
+		return 'analytics';
+	}));
+
+	# Settings
+
+	Route::get('admin/settings', array('as' => 'dashboard', function ()
+	{
+		return 'settings';
+	}));
+});
 
 # Posts by Tag
 
@@ -48,16 +146,16 @@ Route::get('tag/(:any)', function ($tag)
 
 # Posts by Author
 
-Route::get('author/(:any)', function ($tag)
+Route::get('author/(:any)', function ($id)
 {
-	return 'author: ' . $author;
+	return 'author: ' . $id;
 });
 
 # Single Post
 
 Route::get('(:any)', function ($slug)
 {
-	return 'post ' . $slug;
+	return 'post: ' . $slug;
 });
 
 /*

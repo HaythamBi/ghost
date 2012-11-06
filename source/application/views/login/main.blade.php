@@ -1,6 +1,6 @@
 <?php
 
-echo Form::open('admin/login/do', 'POST', array('class' => 'form-inline'));
+echo Form::open('login/do', 'POST', array('class' => 'form-inline'));
 
 echo Form::token();
 

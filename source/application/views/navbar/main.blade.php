@@ -14,7 +14,7 @@
 						<b class="caret"></b>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a href="#">Edit Profile</a></li>
+						<li>{{ HTML::link('/author/' . Auth::user()->id, 'Edit Profile') }}</li>
 						<li>{{ HTML::link_to_route('logout', 'Logout') }}</li>
 					</ul>
 				</li>

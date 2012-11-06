@@ -6,11 +6,11 @@
 		<title></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
-		{{ Asset::bundle('admin')->styles() }}
+		{{ Asset::styles() }}
 	</head>
 	<body>
-	@render('admin::navbar.main')
+	@render('navbar.main')
 	{{ $content }}
-	{{ Asset::container('footer')->bundle('admin')->scripts() }}
+	{{ Asset::container('footer')->scripts() }}
 	</body>
 </html>
