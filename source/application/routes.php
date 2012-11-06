@@ -45,21 +45,25 @@ Asset::container('footer')->bundle('admin')->add('bootstrap-js', 'components/boo
 
 # Home
 
-Route::get('/', array('as' => 'home', function()
+Route::get('/', array('as' => 'Home', function()
 {
 	return View::make('home.index');
 }));
 
-Route::get('login', array('as' => 'login', function ()
+Route::get('login', array('as' => 'Login', function ()
 {
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost Login'
+	));
 	return View::make('layouts.login')
+		->with('view', $view)
 		->with('content', View::make('login.main'));
 }));
 
-Route::get('logout', array('as' => 'logout', function ()
+Route::get('logout', array('as' => 'Logout', function ()
 {
 	Auth::logout();
-	return Redirect::to_route('login');
+	return Redirect::to_route('Login');
 }));
 
 Route::post('login/do', function ()

@@ -16,7 +16,7 @@
 				</a>
 				<ul class="dropdown-menu">
 					<li>{{ HTML::link('/author/' . Auth::user()->id, 'Edit Profile') }}</li>
-					<li>{{ HTML::link_to_route('logout', 'Logout') }}</li>
+					<li>{{ HTML::link_to_route('Logout', 'Logout') }}</li>
 				</ul>
 			</li>
 		</ul>
