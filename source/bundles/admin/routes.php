@@ -1,10 +1,14 @@
 <?php
 
+View::name('admin::layouts.main', 'layout');
+
+Asset::bundle('admin')->add('bootstrap', 'components/bootstrap/css/bootstrap.css');
+
 # Public Routes
 
 Route::get('admin/login', array('as' => 'login', function ()
 {
-	return 'login';
+	return View::of('layout')->with('content', View::make('admin::login.main'));
 }));
 
 # Private Routes
