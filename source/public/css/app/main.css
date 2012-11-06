@@ -68,9 +68,9 @@ i {
 }
 
 .block-header {
+	padding: 4px 0 8px 0;
+	margin-bottom: 16px;
 	border-bottom: 1px solid #f3f3f3;
-	margin-bottom: 8px;
-	padding-bottom: 8px;
 }
 
 .block-header:after {
