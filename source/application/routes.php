@@ -46,54 +46,65 @@ Route::get('login', array('as' => 'login', function ()
 	return 'login';
 }));
 
-# Admin Filter
+# Filters
 
 Route::filter('pattern: admin/*', 'auth');
 
-# Dashboard
+# Admin / Dashboard
 
 Route::get('admin', array('as' => 'dashboard', 'before' => 'auth', function ()
 {
 	return 'dashboard';
 }));
 
-# Blog
+# Admin / Posts
 
-Route::get('admin/blog', array('as' => 'blog', function ()
+Route::get('admin/posts', array('as' => 'blog', function ()
 {
 	return 'blog';
 }));
 
-Route::get('admin/blog/new', function ()
+# Admin / New Post
+
+Route::get('admin/posts/new', function ()
 {
 	return 'new post';
 });
 
-Route::get('admin/blog/(:num)', function ()
+# Admin / Edit Post
+
+Route::get('admin/posts/(:num)', function ()
 {
 	return 'edit post';
 });
 
-# Authors
+# Admin / Authors
 
 Route::get('admin/authors', array('as' => 'authors', function ()
 {
 	return 'authors';
 }));
 
-# Analytics
+# Admin / Analytics
 
 Route::get('admin/analytics', array('as' => 'analytics', function ()
 {
 	return 'analytics';
 }));
 
-# Settings
+# Admin / Settings
 
 Route::get('admin/settings', array('as' => 'dashboard', function ()
 {
 	return 'settings';
 }));
+
+# Tagged Posts
+
+Route::get('tagged/(:any)', function ($tag)
+{
+	return 'tagged: ' . $tag;
+});
 
 # Individual Posts
 
