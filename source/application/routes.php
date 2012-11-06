@@ -39,6 +39,7 @@ View::name('layouts.main', 'layout');
 # Assets
 
 Asset::add('bootstrap', 'components/bootstrap/css/bootstrap.css');
+Asset::add('stylez', 'css/app/main.css');
 Asset::container('footer')->bundle('admin')->add('jquery', 'components/jquery/jquery.js');
 Asset::container('footer')->bundle('admin')->add('bootstrap-js', 'components/bootstrap/js/bootstrap.js');
 
@@ -70,7 +71,7 @@ Route::post('login/do', function ()
 
 	if (Auth::attempt($credentials))
 	{
-		return Redirect::to_route('dashboard');
+		return Redirect::to_route('Dashboard');
 	}
 
 	return Redirect::to_route('login');
@@ -82,21 +83,21 @@ Route::filter('pattern: admin/*', 'auth');
 
 # Dashboard
 
-Route::get('admin', array('as' => 'dashboard', 'before' => 'auth', function ()
+Route::get('admin', array('as' => 'Dashboard', 'before' => 'auth', function ()
 {
 	return View::of('layout')->with('content', View::make('dashboard.main'));
 }));
 
 # Posts
 
-Route::get('admin/posts', array('as' => 'posts', function ()
+Route::get('admin/blog', array('as' => 'Blog', function ()
 {
-	return 'posts';
+	return View::of('layout')->with('content', 'Blog');
 }));
 
 # New Post
 
-Route::get('admin/posts/new', array('as' => 'new post', function ()
+Route::get('admin/blog/new', array('as' => 'New Post', function ()
 {
 	return 'new post';
 }));
@@ -110,9 +111,9 @@ Route::get('admin/posts/(:num)', function ()
 
 # Authors
 
-Route::get('admin/authors', array('as' => 'authors', function ()
+Route::get('admin/authors', array('as' => 'Authors', function ()
 {
-	return 'authors';
+	return View::of('layout')->with('content', 'Authors');
 }));
 
 # Edit Author
@@ -131,9 +132,9 @@ Route::get('admin/analytics', array('as' => 'analytics', function ()
 
 # Settings
 
-Route::get('admin/settings', array('as' => 'settings', function ()
+Route::get('admin/settings', array('as' => 'Settings', function ()
 {
-	return 'settings';
+	return View::of('layout')->with('content', 'Settings');
 }));
 
 # Posts by Tag

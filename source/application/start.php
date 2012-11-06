@@ -181,3 +181,4 @@ if ( ! Request::cli() and Config::get('session.driver') !== '')
 */
 
 require_once 'filters.php';
+require_once 'helpers.php';
