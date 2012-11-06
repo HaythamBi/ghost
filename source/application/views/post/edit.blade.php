@@ -12,4 +12,27 @@
 		</div>
 	</div>
 
+	<div class="blocks">
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="block">
+					<div class="block-header muted uppercase">
+						<div class="block-title pull-left">Markdown</div>
+						<div class="block-icons pull-right">...</div>
+					</div>
+					<textarea></textarea>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="block">
+					<div class="block-header muted uppercase">
+						<div class="block-title pull-left">Preview</div>
+						<div class="block-icons pull-right">0 Words</div>
+					</div>
+					<div class="preview">Loading Preview...</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>

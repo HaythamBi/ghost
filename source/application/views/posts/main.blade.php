@@ -39,7 +39,7 @@
 					<div class="block-title pull-left">Preview</div>
 					<div class="block-icons pull-right">0 Words</div>
 				</div>
-				<div class="preview">Loading Preview</div>
+				<div class="preview">Loading Preview...</div>
 			</div>
 		</div>
 	</div>
