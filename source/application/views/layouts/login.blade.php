@@ -6,7 +6,7 @@
 		<title>{{ $view->get('title', 'Ghost') }}</title>
 		<meta name="description" content="{{ $view->get('description', 'Ghost - Just a blogging platform') }}">
 		<meta name="viewport" content="width=device-width">
-		{{ Asset::bundle('admin')->styles() }}
+		{{ Asset::styles() }}
 	</head>
 	<body>
 	{{ $content }}

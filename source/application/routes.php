@@ -78,7 +78,7 @@ Route::post('login/do', function ()
 		return Redirect::to_route('Dashboard');
 	}
 
-	return Redirect::to_route('login');
+	return Redirect::to_route('Login');
 });
 
 # Admin Filter
