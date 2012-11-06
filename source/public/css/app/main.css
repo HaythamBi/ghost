@@ -42,3 +42,31 @@ body {
 	background: white;
 	box-shadow: 0 2px 2px rgba(0,0,0,0.2);
 }
+
+.posts {
+	padding: 6px 0 6px 0;
+}
+
+.posts .post {
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+	border-bottom: 1px solid #f3f3f3;
+}
+
+.posts .post:last-of-type {
+	padding-bottom: 0;
+	margin-bottom: 0;
+	border-bottom: none;
+}
+
+.post .stats {
+	text-align: right;
+}
+
+.post .stats h2 {
+	margin-top: 0;
+}
+
+.post .stats p {
+	margin-bottom: 0;
+}
