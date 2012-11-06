@@ -32,9 +32,74 @@
 |
 */
 
-Route::get('/', function()
+# Home
+
+Route::get('/', array('as' => 'home', function()
 {
 	return View::make('home.index');
+}));
+
+# Login
+
+Route::get('login', array('as' => 'login', function ()
+{
+	return 'login';
+}));
+
+# Admin Filter
+
+Route::filter('pattern: admin/*', 'auth');
+
+# Dashboard
+
+Route::get('admin', array('as' => 'dashboard', 'before' => 'auth', function ()
+{
+	return 'dashboard';
+}));
+
+# Blog
+
+Route::get('admin/blog', array('as' => 'blog', function ()
+{
+	return 'blog';
+}));
+
+Route::get('admin/blog/new', function ()
+{
+	return 'new post';
+});
+
+Route::get('admin/blog/(:num)', function ()
+{
+	return 'edit post';
+});
+
+# Authors
+
+Route::get('admin/authors', array('as' => 'authors', function ()
+{
+	return 'authors';
+}));
+
+# Analytics
+
+Route::get('admin/analytics', array('as' => 'analytics', function ()
+{
+	return 'analytics';
+}));
+
+# Settings
+
+Route::get('admin/settings', array('as' => 'dashboard', function ()
+{
+	return 'settings';
+}));
+
+# Individual Posts
+
+Route::get('(:any)', function ($slug)
+{
+	return $slug;
 });
 
 /*
@@ -60,52 +125,4 @@ Event::listen('404', function()
 Event::listen('500', function()
 {
 	return Response::error('500');
-});
-
-/*
-|--------------------------------------------------------------------------
-| Route Filters
-|--------------------------------------------------------------------------
-|
-| Filters provide a convenient method for attaching functionality to your
-| routes. The built-in before and after filters are called before and
-| after every request to your application, and you may even create
-| other filters that can be attached to individual routes.
-|
-| Let's walk through an example...
-|
-| First, define a filter:
-|
-|		Route::filter('filter', function()
-|		{
-|			return 'Filtered!';
-|		});
-|
-| Next, attach the filter to a route:
-|
-|		Router::register('GET /', array('before' => 'filter', function()
-|		{
-|			return 'Hello World!';
-|		}));
-|
-*/
-
-Route::filter('before', function()
-{
-	// Do stuff before every request to your application...
-});
-
-Route::filter('after', function($response)
-{
-	// Do stuff after every request to your application...
-});
-
-Route::filter('csrf', function()
-{
-	if (Request::forged()) return Response::error('500');
-});
-
-Route::filter('auth', function()
-{
-	if (Auth::guest()) return Redirect::to('login');
 });
