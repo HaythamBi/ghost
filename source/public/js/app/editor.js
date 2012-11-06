@@ -16,6 +16,15 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 
 			this.$wordcount = $('#wordcount');
 
+			$('#fullscreen').on('click', function () {
+				$('body').toggleClass('fullscreen');
+				if ($('body').hasClass('fullscreen')) {
+					$(this).html('&#59206;');
+				} else {
+					$(this).html('&#59204;');
+				}
+			});
+
 			editor.getSession().setMode("ace/mode/markdown");
 			editor.getSession().setUseWrapMode(true);
 

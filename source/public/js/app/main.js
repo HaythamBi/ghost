@@ -8,6 +8,6 @@ require.config({
 	waitSeconds: 15
 });
 
-require(['editor'], function (editor) {
-	editor.initialize();
+require(['app'], function (app) {
+	app.initialize();
 });
