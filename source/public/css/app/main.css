@@ -50,23 +50,23 @@ body {
 	padding: 6px 0 6px 0;
 }
 
-.posts .post {
+.listed-post {
 	padding-bottom: 12px;
 	margin-bottom: 12px;
 	border-bottom: 1px solid #f3f3f3;
 }
 
-.posts .post:last-of-type {
+.listed-post:last-of-type {
 	padding-bottom: 0;
 	margin-bottom: 0;
 	border-bottom: none;
 }
 
-.post .stats {
+.listed-post .stats {
 	text-align: right;
 }
 
-.post .stats h2 {
+.listed-post .stats h2 {
 	margin-top: 0;
 }
 

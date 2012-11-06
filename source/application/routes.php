@@ -106,7 +106,7 @@ Route::get('admin/blog', array('as' => 'Blog', function ()
 	));
 	return View::of('layout')
 		->with('view', $view)
-		->with('content', View::make('blog.main'));
+		->with('content', View::make('posts.main'));
 }));
 
 # New Post
