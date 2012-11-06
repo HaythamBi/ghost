@@ -12,8 +12,8 @@
 		</div><!-- .media -->
 	</div><!-- .post .span9 -->
 	<div class="span3 stats">
-		<p>12/12/1234</p>
-		<h2>1,932</h2>
+		<p class="muted">12/12/1234</p>
+		<h2 class="muted">1,932</h2>
 	</div>
 </div><!-- .row-fluid -->
 @endsection

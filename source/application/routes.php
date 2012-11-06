@@ -186,7 +186,12 @@ Route::get('tag/(:any)', function ($tag)
 
 Route::get('author/(:any)', function ($id)
 {
-	return 'author: ' . $id;
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost Author'
+	));
+	return View::of('layout')
+		->with('view', $view)
+		->with('content', View::make('author.main'));
 });
 
 # Single Post
