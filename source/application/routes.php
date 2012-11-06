@@ -85,21 +85,36 @@ Route::filter('pattern: admin/*', 'auth');
 
 Route::get('admin', array('as' => 'Dashboard', 'before' => 'auth', function ()
 {
-	return View::of('layout')->with('content', View::make('dashboard.main'));
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost Dashboard'
+	));
+	return View::of('layout')
+		->with('view', $view)
+		->with('content', View::make('dashboard.main'));
 }));
 
 # Posts
 
 Route::get('admin/blog', array('as' => 'Blog', function ()
 {
-	return View::of('layout')->with('content', 'Blog');
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost Blog'
+	));
+	return View::of('layout')
+		->with('view', $view)
+		->with('content', 'Blog');
 }));
 
 # New Post
 
 Route::get('admin/blog/new', array('as' => 'New Post', function ()
 {
-	return 'new post';
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost New Post'
+	));
+	return View::of('layout')
+		->with('view', $view)
+		->with('content', 'New Post');
 }));
 
 # Edit Post
@@ -113,7 +128,12 @@ Route::get('admin/posts/(:num)', function ()
 
 Route::get('admin/authors', array('as' => 'Authors', function ()
 {
-	return View::of('layout')->with('content', 'Authors');
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost Authors'
+	));
+	return View::of('layout')
+		->with('view', $view)
+		->with('content', 'Authors');
 }));
 
 # Edit Author
@@ -125,16 +145,26 @@ Route::get('admin/authors/(:num)', function ($id)
 
 # Analytics
 
-Route::get('admin/analytics', array('as' => 'analytics', function ()
+Route::get('admin/analytics', array('as' => 'Analytics', function ()
 {
-	return 'analytics';
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost Analytics'
+	));
+	return View::of('layout')
+		->with('view', $view)
+		->with('content', 'Analytics');
 }));
 
 # Settings
 
 Route::get('admin/settings', array('as' => 'Settings', function ()
 {
-	return View::of('layout')->with('content', 'Settings');
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost Settings'
+	));
+	return View::of('layout')
+		->with('view', $view)
+		->with('content', 'Settings');
 }));
 
 # Posts by Tag

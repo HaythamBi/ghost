@@ -4,6 +4,7 @@
 			{{ HTML::nav_item('Dashboard') }}
 			{{ HTML::nav_item('Blog') }}
 			{{ HTML::nav_item('Authors') }}
+			{{ HTML::nav_item('Analytics') }}
 			{{ HTML::nav_item('Settings') }}
 		</ul>
 		<ul class="nav pull-right">
