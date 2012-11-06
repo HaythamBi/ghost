@@ -10,7 +10,3 @@ install:
 test:
 	cd ${SOURCE}; php artisan test:core
 	cd ${SOURCE}; php artisan test
-
-lint:
-	recess ${SOURCE}/public/css/*.css
-	jshint ${SOURCE}/public/js/*.js --config ./jshintrc
