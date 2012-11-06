@@ -1,4 +1,4 @@
-<div class="navbar navbar-inverse navbar-static-top">
+<div class="navbar navbar-inverse navbar-static-top navbar-main">
 	<div class="navbar-inner">
 		<ul class="nav">
 			{{ HTML::nav_item('Dashboard') }}
