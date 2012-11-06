@@ -3,6 +3,8 @@
 View::name('admin::layouts.main', 'layout');
 
 Asset::bundle('admin')->add('bootstrap', 'components/bootstrap/css/bootstrap.css');
+Asset::container('footer')->bundle('admin')->add('jquery', 'components/jquery/jquery.js');
+Asset::container('footer')->bundle('admin')->add('bootstrap-js', 'components/bootstrap/js/bootstrap.js');
 
 # Public Routes
 

@@ -8,7 +8,16 @@
 				<li><a href="#">Settings</a></li>
 			</ul>
 			<ul class="nav pull-right">
-				<li><a href="#">{{ Auth::user()->name }} {{ Auth::user()->surname }}</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						{{ Auth::user()->name }} {{ Auth::user()->surname }}
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Edit Profile</a></li>
+						<li><a href="#">Logout</a></li>
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</div>

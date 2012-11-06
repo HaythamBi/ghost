@@ -11,5 +11,6 @@
 	<body>
 	@render('admin::navbar.main')
 	{{ $content }}
+	{{ Asset::container('footer')->bundle('admin')->scripts() }}
 	</body>
 </html>
