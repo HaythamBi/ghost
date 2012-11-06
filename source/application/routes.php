@@ -85,6 +85,13 @@ Route::get('admin/authors', array('as' => 'authors', function ()
 	return 'authors';
 }));
 
+# Admin / Edit Author
+
+Route::get('admin/authors/(:num)', function ($id)
+{
+	return 'author ' . $id;
+});
+
 # Admin / Analytics
 
 Route::get('admin/analytics', array('as' => 'analytics', function ()
