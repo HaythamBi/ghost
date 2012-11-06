@@ -5,6 +5,8 @@
 			<ul class="nav">
 				<li class="active">{{ HTML::link_to_route('dashboard', 'Dashboard') }}</li>
 				<li>{{ HTML::link_to_route('posts', 'Posts') }}</li>
+				<li>{{ HTML::link_to_route('authors', 'Authors') }}</li>
+				<li>{{ HTML::link_to_route('settings', 'Settings') }}</li>
 			</ul>
 			<ul class="nav pull-right">
 				<li class="dropdown">

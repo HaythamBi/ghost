@@ -76,66 +76,65 @@ Route::post('login/do', function ()
 	return Redirect::to_route('login');
 });
 
-# Admin Routes
+# Admin Filter
 
-Route::group(array('before' => 'auth'), function()
+Route::filter('pattern: admin/*', 'auth');
+
+# Dashboard
+
+Route::get('admin', array('as' => 'dashboard', 'before' => 'auth', function ()
 {
-	# Dashboard
+	return View::of('layout')->with('content', View::make('dashboard.main'));
+}));
 
-	Route::get('admin', array('as' => 'dashboard', 'before' => 'auth', function ()
-	{
-		return View::of('layout')->with('content', View::make('dashboard.main'));
-	}));
+# Posts
 
-	# Posts
+Route::get('admin/posts', array('as' => 'posts', function ()
+{
+	return 'posts';
+}));
 
-	Route::get('admin/posts', array('as' => 'posts', function ()
-	{
-		return 'posts';
-	}));
+# New Post
 
-	# New Post
+Route::get('admin/posts/new', array('as' => 'new post', function ()
+{
+	return 'new post';
+}));
 
-	Route::get('admin/posts/new', array('as' => 'new post', function ()
-	{
-		return 'new post';
-	}));
+# Edit Post
 
-	# Edit Post
-
-	Route::get('admin/posts/(:num)', function ()
-	{
-		return 'edit post';
-	});
-
-	# Authors
-
-	Route::get('admin/authors', array('as' => 'authors', function ()
-	{
-		return 'authors';
-	}));
-
-	# Edit Author
-
-	Route::get('admin/authors/(:num)', function ($id)
-	{
-		return 'author ' . $id;
-	});
-
-	# Analytics
-
-	Route::get('admin/analytics', array('as' => 'analytics', function ()
-	{
-		return 'analytics';
-	}));
-
-	# Settings
-
-	Route::get('admin/settings', array('as' => 'dashboard', function ()
-	{
-		return 'settings';
-	}));
+Route::get('admin/posts/(:num)', function ()
+{
+	return 'edit post';
 });
+
+# Authors
+
+Route::get('admin/authors', array('as' => 'authors', function ()
+{
+	return 'authors';
+}));
+
+# Edit Author
+
+Route::get('admin/authors/(:num)', function ($id)
+{
+	return 'author ' . $id;
+});
+
+# Analytics
+
+Route::get('admin/analytics', array('as' => 'analytics', function ()
+{
+	return 'analytics';
+}));
+
+# Settings
+
+Route::get('admin/settings', array('as' => 'settings', function ()
+{
+	return 'settings';
+}));
 
 # Posts by Tag
 
