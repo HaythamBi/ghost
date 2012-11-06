@@ -40,8 +40,8 @@ View::name('layouts.main', 'layout');
 
 Asset::add('bootstrap', 'components/bootstrap/css/bootstrap.css');
 Asset::add('stylez', 'css/app/main.css');
-Asset::container('footer')->bundle('admin')->add('jquery', 'components/jquery/jquery.js');
-Asset::container('footer')->bundle('admin')->add('bootstrap-js', 'components/bootstrap/js/bootstrap.js');
+Asset::container('footer')->add('jquery', 'components/jquery/jquery.js');
+Asset::container('footer')->add('bootstrap-js', 'components/bootstrap/js/bootstrap.js');
 
 # Home
 

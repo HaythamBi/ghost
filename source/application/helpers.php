@@ -1,9 +1,9 @@
 <?php
 
 HTML::macro('nav_item', function($title) {
-	$link = HTML::link_to_route($title, $title, array(), array('title' => $title));
+	$link = HTML::link_to_route($title, $title, array(), array('title' => $title, 'class' => 'uppercase'));
 	if (Request::route()->is($title))
-		return "<li class=\"active\">$link</li>";
+		return "<li class='active'>$link</li>";
 	else
 		return "<li>$link</li>";
 });

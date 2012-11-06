@@ -7,8 +7,11 @@ body {
 	margin-bottom: 6px;
 }
 
-.navbar a {
+.uppercase {
 	text-transform: uppercase;
+}
+
+.navbar a {
 	font-size: 12px;
 }
 
