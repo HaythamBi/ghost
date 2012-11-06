@@ -26,3 +26,9 @@ HTML::macro('disqus', function ($shortname) {
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>';
 });
+
+function increment_string($str, $separator = '_', $first = 1)
+{
+	preg_match('/(.+)'.$separator.'([0-9]+)$/', $str, $match);
+	return isset($match[2]) ? $match[1].$separator.($match[2] + 1) : $str.$separator.$first;
+}

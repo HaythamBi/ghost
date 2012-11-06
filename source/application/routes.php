@@ -113,19 +113,20 @@ Route::get('admin/posts', array('as' => 'Posts', function ()
 
 Route::get('admin/posts/new', array('as' => 'New Post', function ()
 {
-	$post = Post::create(array(
-		'created_by' => Auth::user()->id
-	));
+	$post = Post::create();
 	return Redirect::to('admin/posts/' . $post->id);
 }));
 
 # Edit Post
 
-Route::get('admin/posts/(:num)', function ()
+Route::get('admin/posts/(:num)', function ($id)
 {
+	$post = Post::find($id);
+
 	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost Edit Post'
+		'title' => $post->title
 	));
+
 	return View::of('layout')
 		->with('view', $view)
 		->with('content', View::make('post.edit'));
