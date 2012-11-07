@@ -265,6 +265,10 @@ i {
 	box-shadow: none;
 }
 
+.fullscreen #main {
+	margin-top: 0;
+}
+
 .fullscreen .edit-post .permalink {
 	display: none;
 }
