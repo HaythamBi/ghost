@@ -24,6 +24,18 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 			$('#editor').css('height', ((wrappedLines * 20) + 'px'));
 			this.editor.resize(true);
 		},
+		fullscreen: function () {
+			var self = this;
+			$('#fullscreen').on('click', function () {
+				$('body').toggleClass('fullscreen');
+				self.editor.resize();
+				if ($('body').hasClass('fullscreen')) {
+					$(this).html('&#59206;');
+				} else {
+					$(this).html('&#59204;');
+				}
+			});
+		},
 		initialize: function () {
 			var self = this;
 			var editor = ace.edit("editor");
@@ -33,16 +45,6 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 
 			this.$wordcount = $('#wordcount');
 			this.editor = editor;
-
-			$('#fullscreen').on('click', function () {
-				$('body').toggleClass('fullscreen');
-				editor.resize();
-				if ($('body').hasClass('fullscreen')) {
-					$(this).html('&#59206;');
-				} else {
-					$(this).html('&#59204;');
-				}
-			});
 
 			window.editor = editor;
 
@@ -56,16 +58,17 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 
 			editor.renderer.setShowPrintMargin(false);
 			editor.renderer.setShowGutter(false);
-			// editor.renderer.adjustWrapLimit(10);
 			editor.renderer.setHScrollBarAlwaysVisible(false);
 
 			editor.clearSelection();
 
 			var html = converter.makeHtml(editor.getValue());
-			preview.innerHTML = html;
-			self.wordCount(html);
 
+			preview.innerHTML = html;
+
+			this.wordCount(html);
 			this.resize();
+			this.fullscreen();
 
 			editor.getSession().on('change', function(e) {
 				var html = converter.makeHtml(editor.getValue());
