@@ -16,8 +16,11 @@ define(['jquery', 'select2'], function ($) {
 			$('#select2_tags').select2({
 				tags: [],
                 tokenSeparators: [','],
+				formatResult: function (term) {
+					return 'Assign Tag: ' + term.text;
+				},
 				formatNoMatches: function (term) {
-					return '';
+					return 'Start typing to add a tag';
 				}
 			});
 		}
