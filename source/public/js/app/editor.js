@@ -11,6 +11,7 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 			var lines = this.editor.getValue().split('\n');
 			var wrappedLines = 0;
 			var regex = new RegExp('.{1,' + this.editor.session.screenWidth + '}', 'g');
+			var height;
 
 			_.each(lines, function (line) {
 				if (line === '') {
@@ -21,7 +22,10 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 				}
 			});
 
-			$('#editor').css('height', ((wrappedLines * 20) + 'px'));
+			height = wrappedLines * 20;
+
+			$('#editor').css('height', height + 'px');
+
 			this.editor.resize(true);
 		},
 		fullscreen: function () {
