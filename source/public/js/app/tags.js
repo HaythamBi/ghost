@@ -1,15 +1,32 @@
 define(['jquery', 'select2'], function ($) {
 	return {
+		state: 'closed',
+		open: function () {
+			this.state = 'open';
+			this.$el.removeClass('hide');
+			this.$button.addClass('active');
+			$('.select2-input').focus();
+		},
+		close: function () {
+			this.state = 'closed';
+			this.$el.addClass('hide');
+			this.$button.removeClass('active');
+		},
+		toggle: function () {
+			if (this.state === 'closed') {
+				this.open();
+			} else {
+				this.close();
+			}
+		},
 		initialize: function () {
-			var $el = $('#tags');
+			var self = this;
 
-			$('[data-toggle="#tags"]').on('click', function () {
-				$(this).toggleClass('active');
-				$el.toggleClass('hide');
-				if ($(this).hasClass('active'))
-				{
-					$('.select2-input').focus();
-				}
+			this.$el = $('#tags');
+			this.$button = $('[data-toggle="#tags"]');
+
+			this.$button.on('click', function () {
+				self.toggle();
 				return false;
 			});
 
