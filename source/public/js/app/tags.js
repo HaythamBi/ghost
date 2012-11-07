@@ -11,7 +11,7 @@ define(['jquery', 'select2'], function ($) {
 
 			$('#select2_tags').select2({
 				tags: [],
-                tokenSeparators: [",", " "]
+                tokenSeparators: [',']
 			});
 		}
 	};

@@ -335,6 +335,10 @@ i {
 	margin-bottom: 24px;
 }
 
+.navbar-footer .btn {
+	font-size: 12px;
+}
+
 .navbar-inverse .select2-choices {
 	background: none;
 	border: none;
@@ -342,4 +346,8 @@ i {
 
 .navbar-inverse .select2-search-choice:first-of-type {
 	margin-left: 0;
+}
+
+.navbar-inverse .select2-container-multi .select2-choices .select2-search-field input {
+	color: rgb(230, 230, 230);
 }
