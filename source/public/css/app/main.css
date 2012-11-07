@@ -44,17 +44,18 @@ i {
 	text-align: right;
 }
 
-.navbar-main {
-	overflow: hidden;
-}
-
 #main {
 	margin-top: 54px;
+}
+
+.navbar-main .navbar-inner {
+	border-bottom: none;
 }
 
 .navbar-main .active {
 	position: relative;
 	text-align: center;
+	overflow: hidden;
 }
 
 .btn {
