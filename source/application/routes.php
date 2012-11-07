@@ -7,6 +7,7 @@ View::name('layouts.main', 'layout');
 # Assets
 
 Asset::add('bootstrap', 'components/bootstrap/css/bootstrap.css');
+Asset::add('select2', 'components/select2/select2.css');
 Asset::add('stylez', 'css/app/main.css');
 
 Asset::container('footer')->add('require', 'components/require/require.js', null, array('data-main' => URL::to_asset('js/app/main.js')));

@@ -1,4 +1,5 @@
 {{ HTML::data('post', $post->to_array()) }}
+{{ HTML::data('tags', $post->tag_array) }}
 
 <div class="edit-post">
 
@@ -45,7 +46,7 @@
 <div class="navbar navbar-inverse navbar-fixed-bottom navbar-footer">
 	<div class="navbar-inner">
 		<div class="pull-left">
-			<a data-toggle="#tags" class="btn btn-inverse"><i>&#59148;</i> {{ $post->tag_labels }}</a>
+			<a data-toggle="#tags" class="btn btn-inverse"><i>&#59148;</i> {{ $post->tag_titles }}</a>
 		</div>
 		<div class="pull-right">
 			<a id="settings" class="btn btn-inverse"><i>&#9881;</i></a>
@@ -53,8 +54,8 @@
 			<a id="publish" href="#" class="btn btn-danger">Publish</a>
 		</div>
 		<div class="clearfix"></div>
-		<div id="tags" class="navbar-content hide">
-			<p>sadklfjhals kdfjhalsdkfhj alsdkjfhalsdkfjhdkls fjh</p>
+		<div id="tags" class="navbar-content">
+			<input type="text" id="select2_tags" value="{{ $post->comma_seperated_tags }}" />
 		</div>
 	</div>
 </div>

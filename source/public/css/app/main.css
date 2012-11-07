@@ -45,6 +45,7 @@ i {
 }
 
 #main {
+	position: relative;
 	margin-top: 54px;
 	margin-bottom: 54px;
 }
@@ -330,13 +331,15 @@ i {
 }
 
 .navbar-content {
-	padding-top: 8px;
+	padding: 12px 0 24px 0;
+	margin-bottom: 24px;
 }
 
-.navbar-content h1,
-.navbar-content h2,
-.navbar-content h3,
-.navbar-content h4,
-.navbar-content h5 {
-	font-weight: normal;
+.navbar-inverse .select2-choices {
+	background: none;
+	border: none;
+}
+
+.navbar-inverse .select2-search-choice:first-of-type {
+	margin-left: 0;
 }

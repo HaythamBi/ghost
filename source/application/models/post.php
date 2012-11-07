@@ -87,7 +87,35 @@ class Post extends Eloquent {
 		return strftime('%e, %b %Y', strtotime($this->created_at));
 	}
 
-	public function get_tag_labels()
+	public function get_tag_array()
+	{
+		$models = $this->tags()->get();
+
+		$list = array();
+
+		foreach($models as $model)
+		{
+			$list[$model->slug] = $model->title;
+		}
+
+		return $list;
+	}
+
+	public function get_comma_seperated_tags()
+	{
+		$models = $this->tags()->get();
+
+		$list = array();
+
+		foreach($models as $model)
+		{
+			$list[] = $model->title;
+		}
+
+		return implode($list, ',');
+	}
+
+	public function get_tag_titles()
 	{
 		$models = $this->tags()->get();
 

@@ -5,7 +5,8 @@ require.config({
 		'marked'     : '../../components/marked/marked',
 		'jquery'     : '../../components/jquery/jquery',
 		'underscore' : '../../components/lodash/lodash',
-		'bootstrap'  : '../../components/bootstrap/js/bootstrap'
+		'bootstrap'  : '../../components/bootstrap/js/bootstrap',
+		'select2'    : '../../components/select2/select2'
 	}
 });
 
