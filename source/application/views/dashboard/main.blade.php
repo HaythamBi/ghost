@@ -16,10 +16,16 @@
 <div class="blocks">
 	<div class="row-fluid">
 		<div class="span3">
-			<div class="block">
+			<div class="block dashboard-widget dashboard-clock">
 				<div class="block-header muted uppercase">
-					<div class="block-title pull-left">{{ Config::get('application.timezone') }}</div>
+					<div class="block-title pull-left">{{ Config::get('application.location') }}</div>
 				</div>
+				<h1>{{ strftime('%I:%M') }} <small>{{ strftime('%p') }}</small></h1>
+				<hr>
+				<h4 class="muted">{{ strftime('%A') }}</h4>
+				<h3>{{ strftime('%e %B %Y') }}</h3>
+				<hr>
+				<span class="muted uppercase">TIMEZONE: {{ Config::get('application.timezone') }}</span>
 			</div>
 		</div>
 		<div class="span6">

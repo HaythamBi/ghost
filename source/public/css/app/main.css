@@ -29,6 +29,10 @@ i {
 	text-transform: uppercase;
 }
 
+.lowercase {
+	text-transform: lowercase;
+}
+
 .align-right {
 	text-align: right;
 }
@@ -225,4 +229,21 @@ i {
 
 .fullscreen .edit-post .permalink {
 	display: none;
+}
+
+.dashboard-widget hr {
+	margin: 10px 0;
+}
+
+.dashboard-clock h1,
+.dashboard-clock h2,
+.dashboard-clock h3,
+.dashboard-clock h4 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.dashboard-clock h1 small {
+	position: relative;
+	left: -8px;
 }
