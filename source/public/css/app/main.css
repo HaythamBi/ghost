@@ -358,6 +358,12 @@ i {
 	color: rgb(220, 220, 220)!important;
 }
 
+.select2-no-results {
+	padding: 3px 7px 4px;
+	color: white!important;
+	background: rgb(56, 117, 215)!important;
+}
+
 .select2-container-multi .select2-search-choice-close {
 	top: 3px;
 	left: 4px;
