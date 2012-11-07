@@ -4,6 +4,7 @@ body, html {
 	width: 100%;
 	height: 100%;
 	overflow-x: hidden;
+	font-family: sans-serif;
 }
 
 body {
@@ -241,9 +242,15 @@ i {
 .dashboard-clock h4 {
 	margin-top: 0;
 	margin-bottom: 0;
+	font-weight: 100;
+}
+
+.dashboard-clock h1 {
+	font-size: 64px;
+	font-weight: normal;
 }
 
 .dashboard-clock h1 small {
 	position: relative;
-	left: -8px;
+	left: -18px;
 }
