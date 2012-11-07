@@ -237,12 +237,15 @@ i {
 	margin: 12px 0 0 0;
 }
 
-.edit-post .permalink .edit {
-	font-weight: bold;
+.edit-post .permalink .controls {
 	visibility: hidden;
 }
 
-.edit-post .permalink:hover .edit {
+.edit-post .permalink .controls a {
+	font-weight: bold;
+}
+
+.edit-post .permalink:hover .controls {
 	visibility: visible;
 }
 

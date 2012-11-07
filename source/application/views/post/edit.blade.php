@@ -7,7 +7,10 @@
 					<input class="post-title" type="text" value="{{ $post->title }}" placeholder="Post Title" />
 					<i id="fullscreen" class="icon-fullscreen muted">&#59204;</i>
 				</div>
-				<p class="muted permalink"><strong>Permalink: </strong> {{ URL::base() }}/<strong>{{ $post->slug }}</strong> <a class="edit" href="#">Click to edit</a></p>
+				<p class="muted permalink">
+					<strong>Permalink: </strong>{{ URL::base() }}/<strong>{{ $post->slug }}</strong>
+					<span class="controls"><a href="#">Click to Edit</a> | <a href="#">View Post</a></span>
+				</p>
 			</div>
 		</div>
 	</div>
