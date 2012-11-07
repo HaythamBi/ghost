@@ -29,7 +29,7 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 			window.editor = editor;
 
 			editor.getSession().setMode("ace/mode/markdown");
-			editor.getSession().setUseWrapMode(true);
+			// editor.getSession().setUseWrapMode(true);
 
 			editor.setTheme("ace/theme/textmate");
 			editor.setHighlightActiveLine(false);
@@ -38,9 +38,13 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 
 			editor.renderer.setShowPrintMargin(false);
 			editor.renderer.setShowGutter(false);
-			editor.renderer.adjustWrapLimit(10);
+			// editor.renderer.adjustWrapLimit(10);
+			editor.renderer.setHScrollBarAlwaysVisible(false);
 
 			editor.clearSelection();
+
+			$('#editor').css('height', ((editor.session.getLength() * 20) + 'px'));
+			editor.resize(true);
 
 			var html = converter.makeHtml(editor.getValue());
 			preview.innerHTML = html;
@@ -51,6 +55,8 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 				preview.innerHTML = html;
 				storage.set('test', editor.getValue());
 				self.wordCount(html);
+				$('#editor').css('height', ((editor.session.getLength() * 20) + 'px'));
+				editor.resize(true);
 			});
 
 			return editor;
