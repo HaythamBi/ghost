@@ -21,7 +21,7 @@
 	<div class="blocks">
 		<div class="row-fluid">
 			<div class="span6">
-				<div class="block">
+				<div class="block editor-block">
 					<div class="block-header muted uppercase">
 						<div class="block-title pull-left">Markdown</div>
 						<div class="block-icons pull-right"><strong><a class="muted" href="http://en.wikipedia.org/wiki/Markdown">?</a></strong></div>
@@ -30,7 +30,7 @@
 				</div>
 			</div>
 			<div class="span6">
-				<div class="block">
+				<div class="block preview-block">
 					<div class="block-header muted uppercase">
 						<div class="block-title pull-left">Preview</div>
 						<div id="wordcount" class="block-icons align-right"></div>

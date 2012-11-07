@@ -225,11 +225,12 @@ i {
 
 .edit-post .post-title {
 	display: block;
-	margin: 0;
-	padding-right: 0;
 	width: 100%;
 	height: auto;
+	padding-right: 0;
+	margin: 0;
 	font-size: 28px;
+	font-weight: bold;
 	line-height: 32px;
 	border: none;
 }
@@ -286,35 +287,49 @@ i {
 }
 
 .fullscreen {
+	box-sizing: border-box;
+	padding: 44px;
 	background: white;
 }
 
-.fullscreen .post-title {
-	padding: 0;
-}
-
-.fullscreen .block-icons,
-.fullscreen .navbar-main,
-.fullscreen .navbar-footer {
-	display: none;
-}
-
-.fullscreen #wordcount {
-	display: block;
+.fullscreen #fullscreen {
+	right: 0;
+	top: 14px;
 }
 
 .fullscreen .blocks,
 .fullscreen .block {
+	padding: 0;
 	margin: 0;
 	box-shadow: none;
 }
 
-.fullscreen #main {
-	margin-top: 0;
+.fullscreen .editor-block {
+	padding: 22px 22px 0 0;
+	margin: 0 22px 0 0;
+	border-right: 3px solid rgb(243, 243, 243);
 }
 
-.fullscreen .edit-post .permalink {
+.fullscreen .preview-block {
+	padding: 22px 0 0 0;
+	margin: 0;
+}
+
+.fullscreen .post-title {
+	padding: 0 0 12px 0;
+	margin: 0;
+	border-bottom: 3px solid rgb(243, 243, 243);
+}
+
+.fullscreen .block-header,
+.fullscreen .navbar-main,
+.fullscreen .edit-post .permalink,
+.fullscreen .navbar-footer {
 	display: none;
+}
+
+.fullscreen #main {
+	margin-top: 0;
 }
 
 /* Dashboard ------------------------------------------------------------------------- */
