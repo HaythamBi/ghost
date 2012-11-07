@@ -100,6 +100,15 @@ class Post extends Eloquent {
 
 		asort($list);
 
+		if (count($list) > 3)
+		{
+			$list = array(
+				$list[0],
+				$list[1],
+				$list[2] . ' ...'
+			);
+		}
+
 		return implode($list, ', ');
 	}
 
