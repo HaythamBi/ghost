@@ -1,4 +1,4 @@
-define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace, showdown, storage, $, _) {
+define(['ace/ace', 'storage', 'jquery', 'underscore', 'marked'], function (ace, storage, $, _) {
 	return {
 		wordCount: function (html) {
 			var raw_words = $('<div>' + html + '</div>').text().split(/\s/ig);
@@ -36,13 +36,14 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 				}
 			});
 		},
+		html: function (markdown) {
+			return marked(markdown);
+		},
 		initialize: function () {
 			if ($('#editor').length === 0) return;
 
 			var self = this;
 			var editor = ace.edit("editor");
-			var Showdown = require('showdown');
-			var converter = new Showdown.converter();
 			var preview = document.getElementById('preview');
 
 			this.$wordcount = $('#wordcount');
@@ -62,7 +63,7 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 
 			editor.clearSelection();
 
-			var html = converter.makeHtml(editor.getValue());
+			var html = self.html(editor.getValue());
 
 			preview.innerHTML = html;
 
@@ -71,7 +72,7 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 			this.fullscreen();
 
 			editor.getSession().on('change', function(e) {
-				var html = converter.makeHtml(editor.getValue());
+				var html = self.html(editor.getValue());
 				preview.innerHTML = html;
 				storage.set('test', editor.getValue());
 				self.wordCount(html);
