@@ -125,6 +125,21 @@ i {
 	border-bottom: 1px solid #f3f3f3;
 }
 
+.block-icons a:hover {
+	text-decoration: none;
+}
+
+.block-icons i {
+	position: relative;
+	top: 4px;
+	font-size: 32px;
+	line-height: 12px;
+}
+
+.block-icons a:hover i {
+	color: #444;
+}
+
 .block-header:after {
 	clear: both;
 	display: table;
@@ -299,5 +314,5 @@ i {
 
 .dashboard-clock h1 small {
 	position: relative;
-	left: -18px;
+	left: -16px;
 }

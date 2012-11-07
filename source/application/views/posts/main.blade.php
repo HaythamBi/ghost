@@ -24,7 +24,7 @@
 			<div class="block">
 				<div class="block-header muted uppercase">
 					<div class="block-title pull-left">Posts</div>
-					<div class="block-icons pull-right">...</div>
+					<div class="block-icons pull-right"><a href="{{ URL::to_route('New Post') }}"><i class="muted">&oplus;</i></a></div>
 				</div>
 				<div class="posts">
 					@yield('post')
