@@ -45,6 +45,11 @@ class Post extends Eloquent {
 		return ($success) ? $model : false;
 	}
 
+	public function tags()
+	{
+		return $this->has_many_and_belongs_to('Tag', 'post_tags');
+	}
+
 	public static function create_slug($string)
 	{
 		$slug = Str::slug($string);
@@ -80,6 +85,22 @@ class Post extends Eloquent {
 	public function get_date()
 	{
 		return strftime('%e, %b %Y', strtotime($this->created_at));
+	}
+
+	public function get_tag_labels()
+	{
+		$models = $this->tags()->get();
+
+		$list = array();
+
+		foreach($models as $model)
+		{
+			$list[] = $model->title;
+		}
+
+		asort($list);
+
+		return implode($list, ', ');
 	}
 
 }

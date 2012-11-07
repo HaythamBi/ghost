@@ -6,7 +6,7 @@
 			</a>
 			<div class="media-body">
 				<h4 class="media-heading">{{ $post->title }}</h4>
-				<p class="muted">News, Tech</p>
+				<p class="muted">{{ $post->tag_labels }}</p>
 			</div>
 		</div><!-- .media -->
 	</div><!-- .post .span9 -->

@@ -9,7 +9,7 @@
 				</div>
 				<p class="muted permalink">
 					<strong>Permalink: </strong>{{ URL::base() }}/<strong>{{ $post->slug }}</strong>
-					<span class="controls"><a href="#">Click to Edit</a> | <a href="#">View Post</a></span>
+					<span class="controls"><a href="#">Click to Edit</a> | <a target="_blank" href="{{ $post->permalink }}">View Post</a></span>
 				</p>
 			</div>
 		</div>

@@ -81,9 +81,9 @@ class Init {
 
 			$table->increments('id');
 
-			# unique key
+			# composite unique key
 
-			$table->string('slug')->unique();
+			$table->unique(array('post_id', 'tag_id'));
 
 			# foreign keys
 
