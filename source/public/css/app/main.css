@@ -305,9 +305,10 @@ i {
 }
 
 .fullscreen .editor-block {
-	padding: 22px 22px 0 0;
+	padding: 22px 22px 44px 0;
 	margin: 0 22px 0 0;
 	border-right: 3px solid rgb(243, 243, 243);
+	min-height: 100%;
 }
 
 .fullscreen .preview-block {
@@ -330,6 +331,7 @@ i {
 
 .fullscreen #main {
 	margin-top: 0;
+	min-height: 100%;
 }
 
 /* Dashboard ------------------------------------------------------------------------- */
