@@ -16,6 +16,8 @@ define(['jquery', 'select2'], function ($) {
 			$('#select2_tags').select2({
 				tags: [],
                 tokenSeparators: [','],
+				containerCssClass: 'select2-tags',
+				dropdownCssClass: 'select2-tags',
 				formatResult: function (term) {
 					return 'Assign Tag: ' + term.text;
 				},
