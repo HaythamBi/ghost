@@ -288,6 +288,10 @@ i {
 	background: white;
 }
 
+.fullscreen .post-title {
+	padding: 0;
+}
+
 .fullscreen .block-icons,
 .fullscreen .navbar-main,
 .fullscreen .navbar-footer {
