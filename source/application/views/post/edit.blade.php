@@ -45,10 +45,10 @@
 <div class="navbar navbar-inverse navbar-fixed-bottom navbar-footer">
 	<div class="navbar-inner">
 		<div class="pull-left">
-			<a data-toggle="#tags" href="#" class="btn btn-inverse"><i>&#59148;</i> {{ $post->tag_labels }}</a>
+			<a data-toggle="#tags" class="btn btn-inverse"><i>&#59148;</i> {{ $post->tag_labels }}</a>
 		</div>
 		<div class="pull-right">
-			<a id="settings" href="#" class="btn btn-inverse"><i>&#9881;</i></a>
+			<a id="settings" class="btn btn-inverse"><i>&#9881;</i></a>
 			<a id="save" href="#" class="btn btn-primary">Save Draft</a>
 			<a id="publish" href="#" class="btn btn-danger">Publish</a>
 		</div>
