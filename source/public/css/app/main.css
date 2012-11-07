@@ -335,12 +335,27 @@ i {
 /* Footer ------------------------------------------------------------------------- */
 
 .navbar-content {
-	padding: 12px 0 24px 0;
-	margin-bottom: 24px;
+	padding-top: 12px;
+	padding-bottom: 12px;
 }
 
 .navbar-footer .btn {
 	font-size: 12px;
+}
+
+.navbar-content h1,
+.navbar-content h2,
+.navbar-content h3,
+.navbar-content h4,
+.navbar-content h5 {
+	font-weight: normal;
+}
+
+
+/* Post Tags ------------------------------------------------------------------------- */
+
+.select2-tags {
+	width: 100%;
 }
 
 .select2-tags .select2-container {
@@ -353,12 +368,6 @@ i {
 	border: none;
 }
 
-/* Post Tags ------------------------------------------------------------------------- */
-
-.select2-tags {
-	width: 100%;
-}
-
 .select2-tags.select2-drop {
 	background: none;
 	border: none;
@@ -368,8 +377,17 @@ i {
 	color: rgb(220, 220, 220)!important;
 }
 
+.select2-tags .select2-results {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.select2-tags .select2-result-label {
+	padding: 12px;
+}
+
 .select2-tags .select2-no-results {
-	padding: 3px 7px 4px;
+	padding: 12px;
 	color: white!important;
 	background: rgb(56, 117, 215)!important;
 }
