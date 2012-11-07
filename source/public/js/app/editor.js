@@ -9,8 +9,8 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 		},
 		resize: function () {
 			var lines = this.editor.getValue().split('\n');
-			var wrappedLines = 0;
 			var regex = new RegExp('.{1,' + this.editor.session.screenWidth + '}', 'g');
+			var wrappedLines = 0;
 			var height;
 
 			_.each(lines, function (line) {
@@ -18,11 +18,13 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 					wrappedLines++;
 				} else {
 					var wrapped = line.match(regex);
-					if (wrapped) wrappedLines = wrappedLines + wrapped.length;
+					if (wrapped) wrappedLines += wrapped.length;
 				}
 			});
 
-			height = wrappedLines * 20;
+			wrappedLines++;
+
+			height = (wrappedLines * 20);
 
 			$('#editor').css('height', height + 'px');
 
@@ -30,8 +32,6 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 		},
 		fullscreen: function () {
 			$('body').toggleClass('fullscreen');
-
-			this.editor.resize();
 
 			if ($('body').hasClass('fullscreen'))
 			{
@@ -41,8 +41,6 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 			{
 				$('#fullscreen').html('&#59204;');
 			}
-
-			this.resize();
 		},
 		html: function (markdown) {
 			return marked(markdown);
@@ -53,6 +51,7 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 			var self = this;
 			var editor = ace.edit("editor");
 			var preview = document.getElementById('preview');
+			var html;
 
 			this.$wordcount = $('#wordcount');
 			this.editor = editor;
@@ -71,12 +70,14 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 
 			editor.clearSelection();
 
-			var html = self.html(editor.getValue());
+			html = self.html(editor.getValue());
 
 			preview.innerHTML = html;
 
 			this.wordCount(html);
 			this.resize();
+
+			window.editor = editor;
 
 			// fullscreen, button
 
