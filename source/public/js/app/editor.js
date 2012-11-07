@@ -10,7 +10,7 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 		resize: function () {
 			var lines = this.editor.getValue().split('\n');
 			var wrappedLines = 0;
-			var regex = new RegExp('.{1,' + editor.session.screenWidth + '}', 'g');
+			var regex = new RegExp('.{1,' + this.editor.session.screenWidth + '}', 'g');
 
 			_.each(lines, function (line) {
 				if (line === '') {
