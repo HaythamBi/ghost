@@ -229,6 +229,7 @@ i {
 	width: 100%;
 	height: 400px;
 	font-size: 14px;
+	padding-bottom: 12px;
 }
 
 #preview {
