@@ -288,6 +288,7 @@ i {
 	background: white;
 }
 
+.fullscreen .block-icons,
 .fullscreen .navbar-main,
 .fullscreen .navbar-footer {
 	display: none;
