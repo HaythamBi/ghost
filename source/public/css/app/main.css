@@ -234,7 +234,16 @@ i {
 }
 
 .edit-post .permalink {
-	margin: 8px 0 0 0;
+	margin: 12px 0 0 0;
+}
+
+.edit-post .permalink .edit {
+	font-weight: bold;
+	visibility: hidden;
+}
+
+.edit-post .permalink:hover .edit {
+	visibility: visible;
 }
 
 /* Editor ----------------------------------------------------------------------------- */
