@@ -21,7 +21,7 @@ Route::get('/', array('as' => 'Home', function()
 Route::get('login', array('as' => 'Login', function ()
 {
 	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost Login'
+		'title' => 'Ghost - Login'
 	));
 	return View::make('layouts.login')
 		->with('view', $view)
@@ -58,7 +58,7 @@ Route::filter('pattern: admin/*', 'auth');
 Route::get('admin', array('as' => 'Dashboard', 'before' => 'auth', function ()
 {
 	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost Dashboard'
+		'title' => 'Ghost - Dashboard'
 	));
 	return View::of('layout')
 		->with('view', $view)
@@ -70,7 +70,7 @@ Route::get('admin', array('as' => 'Dashboard', 'before' => 'auth', function ()
 Route::get('admin/posts', array('as' => 'Posts', function ()
 {
 	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost Blog'
+		'title' => 'Ghost - Blog'
 	));
 	return View::of('layout')
 		->with('view', $view)
@@ -92,7 +92,7 @@ Route::get('admin/posts/(:num)', function ($id)
 	$post = Post::find($id);
 
 	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost ' . $post->title
+		'title' => 'Ghost - ' . $post->title
 	));
 
 	return View::of('layout')
@@ -105,7 +105,7 @@ Route::get('admin/posts/(:num)', function ($id)
 Route::get('admin/authors', array('as' => 'Authors', function ()
 {
 	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost Authors'
+		'title' => 'Ghost - Authors'
 	));
 	return View::of('layout')
 		->with('view', $view)
@@ -124,7 +124,7 @@ Route::get('admin/authors/(:num)', function ($id)
 Route::get('admin/analytics', array('as' => 'Analytics', function ()
 {
 	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost Analytics'
+		'title' => 'Ghost - Analytics'
 	));
 	return View::of('layout')
 		->with('view', $view)
@@ -136,7 +136,7 @@ Route::get('admin/analytics', array('as' => 'Analytics', function ()
 Route::get('admin/settings', array('as' => 'Settings', function ()
 {
 	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost Settings'
+		'title' => 'Ghost - Settings'
 	));
 	return View::of('layout')
 		->with('view', $view)
@@ -155,7 +155,7 @@ Route::get('tag/(:any)', function ($tag)
 Route::get('author/(:any)', function ($id)
 {
 	$view = new \Laravel\Fluent(array(
-		'title' => 'Ghost Author'
+		'title' => 'Ghost - Author'
 	));
 	return View::of('layout')
 		->with('view', $view)
