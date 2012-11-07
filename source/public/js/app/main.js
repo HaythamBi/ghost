@@ -6,6 +6,7 @@ require.config({
 		'jquery'     : '../../components/jquery/jquery',
 		'underscore' : '../../components/lodash/lodash',
 		'bootstrap'  : '../../components/bootstrap/js/bootstrap',
+		'mousetrap'  : '../../components/mousetrap/mousetrap',
 		'select2'    : '../../components/select2/select2'
 	}
 });

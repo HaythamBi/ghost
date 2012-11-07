@@ -1,4 +1,4 @@
-define(['ace/ace', 'storage', 'jquery', 'underscore', 'marked'], function (ace, storage, $, _) {
+define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], function (ace, storage, $, _) {
 	return {
 		wordCount: function (html) {
 			var raw_words = $('<div>' + html + '</div>').text().split(/\s/ig);
@@ -25,16 +25,18 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'marked'], function (ace, 
 			this.editor.resize(true);
 		},
 		fullscreen: function () {
-			var self = this;
-			$('#fullscreen').on('click', function () {
-				$('body').toggleClass('fullscreen');
-				self.editor.resize();
-				if ($('body').hasClass('fullscreen')) {
-					$(this).html('&#59206;');
-				} else {
-					$(this).html('&#59204;');
-				}
-			});
+			$('body').toggleClass('fullscreen');
+
+			this.editor.resize();
+
+			if ($('body').hasClass('fullscreen'))
+			{
+				$('#fullscreen').html('&#59206;');
+			}
+			else
+			{
+				$('#fullscreen').html('&#59204;');
+			}
 		},
 		html: function (markdown) {
 			return marked(markdown);
@@ -69,7 +71,22 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'marked'], function (ace, 
 
 			this.wordCount(html);
 			this.resize();
-			this.fullscreen();
+
+			// fullscreen, button
+
+			$('#fullscreen').on('click', function () {
+				self.fullscreen();
+				return false;
+			});
+
+			// fullscreen, keyboard shortcut
+			
+			Mousetrap.bind('ctrl+f', function(e) {
+				self.fullscreen();
+				return false;
+			});
+
+			// update on text changes
 
 			editor.getSession().on('change', function(e) {
 				var html = self.html(editor.getValue());
