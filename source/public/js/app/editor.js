@@ -41,6 +41,8 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 			{
 				$('#fullscreen').html('&#59204;');
 			}
+
+			this.resize();
 		},
 		html: function (markdown) {
 			return marked(markdown);
