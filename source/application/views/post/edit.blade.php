@@ -54,7 +54,7 @@
 			<a id="publish" href="#" class="btn btn-danger">Publish</a>
 		</div>
 		<div class="clearfix"></div>
-		<div id="tags" class="navbar-content">
+		<div id="tags" class="navbar-content hide">
 			<input type="text" id="select2_tags" value="{{ $post->comma_seperated_tags }}" />
 		</div>
 	</div>

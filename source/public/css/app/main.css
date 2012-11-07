@@ -339,15 +339,33 @@ i {
 	font-size: 12px;
 }
 
+.navbar-inverse .select2-container {
+	width: 100%;
+}
+
 .navbar-inverse .select2-choices {
-	background: none;
+	background: rgb(41, 41, 41);
+	padding: 12px;
 	border: none;
+}
+
+.select2-container-multi .select2-search-choice-close {
+	top: 3px;
+	left: 4px;
+}
+
+.select2-container-multi .select2-choices .select2-search-choice {
+	padding-top: 4px;
+	border: none;
+	background: rgb(228, 228, 228);
+	box-shadow: none;
 }
 
 .navbar-inverse .select2-search-choice:first-of-type {
 	margin-left: 0;
 }
 
-.navbar-inverse .select2-container-multi .select2-choices .select2-search-field input {
+.navbar-inverse .select2-choices input {
 	color: rgb(230, 230, 230);
+	width: 200px!important;
 }
