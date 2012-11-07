@@ -237,6 +237,10 @@ i {
 	font-size: 14px;
 }
 
+#preview p {
+	line-height: 24px;
+}
+
 /* Fullscreen ------------------------------------------------------------------------- */
 
 .icon-fullscreen {
