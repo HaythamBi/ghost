@@ -26,6 +26,12 @@ i {
 	color: #444;
 }
 
+.navbar-inverse i {
+	position: relative;
+	top: 2px;
+	color: rgb(218, 218, 218);
+}
+
 .uppercase {
 	text-transform: uppercase;
 }
@@ -43,7 +49,28 @@ i {
 	text-align: center;
 }
 
-.navbar .active:after {
+.btn {
+	border-radius: 2px;
+}
+
+.navbar .btn {
+	margin-right: 4px;
+}
+
+.navbar .btn:last-of-type {
+	margin-right: 0;
+}
+
+.navbar-inner {
+	padding-left: 0;
+}
+
+.navbar-fixed-bottom .navbar-inner {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.navbar-main .active:after {
 	content: '▲';
 	position: absolute;
 	display: block;

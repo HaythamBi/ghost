@@ -36,3 +36,16 @@
 	</div>
 
 </div>
+
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+	<div class="navbar-inner">
+		<div class="pull-left">
+			<a href="#" class="btn btn-inverse"><i>&#59148;</i> News, Articles</a>
+		</div>
+		<div class="pull-right">
+			<a href="#" class="btn btn-inverse"><i>&#9881;</i></a>
+			<a href="#" class="btn btn-primary">Save Draft</a>
+			<a href="#" class="btn btn-danger">Publish</a>
+		</div>
+	</div>
+</div>
