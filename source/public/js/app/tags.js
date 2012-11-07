@@ -19,7 +19,7 @@ define(['jquery', 'select2'], function ($) {
 				containerCssClass: 'select2-tags',
 				dropdownCssClass: 'select2-tags',
 				formatResult: function (term) {
-					return 'Assign Tag: ' + term.text;
+					return 'Add Tag: <span class="underline">' + term.text + '</span>';
 				},
 				formatNoMatches: function (term) {
 					return 'Start typing to add a tag';

@@ -40,6 +40,10 @@ i {
 	text-transform: lowercase;
 }
 
+.underline {
+	text-decoration: underline;
+}
+
 .align-right {
 	text-align: right;
 }
@@ -363,7 +367,7 @@ i {
 
 .navbar-content {
 	padding-top: 12px;
-	padding-bottom: 12px;
+	padding-bottom: 64px;
 }
 
 .navbar-footer .btn {
@@ -391,7 +395,7 @@ i {
 
 .select2-tags .select2-choices {
 	background: rgb(41, 41, 41);
-	padding: 12px;
+	padding: 8px;
 	border: none;
 }
 
@@ -410,11 +414,11 @@ i {
 }
 
 .select2-tags .select2-result-label {
-	padding: 12px;
+	padding: 8px;
 }
 
 .select2-tags .select2-no-results {
-	padding: 12px;
+	padding: 8px;
 	color: white!important;
 	background: rgb(56, 117, 215)!important;
 }
