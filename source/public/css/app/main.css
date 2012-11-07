@@ -299,6 +299,10 @@ i {
 	display: none;
 }
 
+.fullscreen #wordcount {
+	display: block;
+}
+
 .fullscreen .blocks,
 .fullscreen .block {
 	margin: 0;
