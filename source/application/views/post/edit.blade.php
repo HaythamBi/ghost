@@ -50,8 +50,10 @@
 		</div>
 		<div class="pull-right">
 			<a data-toggle="#settings" class="btn btn-inverse"><i>&#9881;</i></a>
-			<a id="save" href="#" class="btn btn-primary">Save Draft</a>
-			<a id="publish" href="#" class="btn btn-danger">Publish</a>
+			<div class="btn-group" data-toggle="buttons-radio">
+				<button type="button" class="btn btn-primary active">Draft</button>
+				<button type="button" class="btn btn-primary">Published</button>
+			</div>
 		</div>
 		<div class="clearfix"></div>
 		<!-- Tags -->

@@ -68,7 +68,7 @@ i {
 	margin-right: 4px;
 }
 
-.navbar .btn:last-of-type {
+.navbar .btn-group .btn {
 	margin-right: 0;
 }
 
