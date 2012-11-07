@@ -95,14 +95,6 @@ i {
 	font-size: 14px;
 }
 
-.icon-fullscreen {
-	position: absolute;
-	top: 23px;
-	right: 19px;
-	cursor: pointer;
-	font-size: 48px;
-}
-
 .posts {
 	padding: 6px 0 6px 0;
 }
@@ -205,6 +197,18 @@ i {
 }
 
 /* Fullscreen ------------------------------------------------------------------------- */
+
+.icon-fullscreen {
+	position: absolute;
+	top: 23px;
+	right: 19px;
+	cursor: pointer;
+	font-size: 48px;
+}
+
+.icon-fullscreen:hover {
+	color: #444;
+}
 
 .fullscreen {
 	background: white;
