@@ -398,16 +398,16 @@ i {
 	background: rgb(56, 117, 215)!important;
 }
 
-.select2-tags .select2-search-choice-close {
-	top: 3px;
-	left: 4px;
+.select2-tags .select2-search-choice {
+	padding: 5px 10px 4px 20px!important;
+	border: none!important;
+	background: rgb(228, 228, 228)!important;
+	box-shadow: none;
 }
 
-.select2-tags .select2-search-choice {
-	padding-top: 4px;
-	border: none;
-	background: rgb(228, 228, 228);
-	box-shadow: none;
+.select2-tags .select2-search-choice-close {
+	top: 4px;
+	left: 4px;
 }
 
 .select2-tags .select2-search-choice:first-of-type {
