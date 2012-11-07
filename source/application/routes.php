@@ -72,9 +72,12 @@ Route::get('admin/posts', array('as' => 'Posts', function ()
 	$view = new \Laravel\Fluent(array(
 		'title' => 'Ghost - Blog'
 	));
+
+	$posts = Post::all();
+
 	return View::of('layout')
 		->with('view', $view)
-		->with('content', View::make('posts.main'));
+		->with('content', View::make('posts.main')->with('posts', $posts));
 }));
 
 # New Post

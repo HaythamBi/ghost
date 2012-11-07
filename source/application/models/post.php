@@ -71,4 +71,15 @@ class Post extends Eloquent {
 		return URL::to($this->slug);
 	}
 
+	public function get_edit_url()
+	{
+		$url = URL::to_route('Posts');
+		return $url . '/' . $this->id;
+	}
+
+	public function get_date()
+	{
+		return strftime('%e, %b %Y', strtotime($this->created_at));
+	}
+
 }
