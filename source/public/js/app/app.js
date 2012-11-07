@@ -1,4 +1,4 @@
-define(['editor'], function (editor) {
+define(['editor', 'bootstrap'], function (editor) {
 	return {
 		initialize: function () {
 			editor.initialize();

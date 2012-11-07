@@ -3,11 +3,11 @@ require.config({
 		'ace'        : '../../components/ace',
 		'showdown'   : '../../components/showdown/showdown',
 		'jquery'     : '../../components/jquery/jquery',
-		'underscore' : '../../components/lodash/lodash'
-	},
-	waitSeconds: 15
+		'underscore' : '../../components/lodash/lodash',
+		'bootstrap'  : '../../components/bootstrap/js/bootstrap'
+	}
 });
 
-require(['app'], function (app) {
+require(['app', 'jquery'], function (app) {
 	app.initialize();
 });

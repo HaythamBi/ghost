@@ -37,6 +37,8 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 			});
 		},
 		initialize: function () {
+			if ($('#editor').length === 0) return;
+
 			var self = this;
 			var editor = ace.edit("editor");
 			var Showdown = require('showdown');
@@ -45,8 +47,6 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 
 			this.$wordcount = $('#wordcount');
 			this.editor = editor;
-
-			window.editor = editor;
 
 			editor.getSession().setMode("ace/mode/markdown");
 			editor.getSession().setUseWrapMode(true);

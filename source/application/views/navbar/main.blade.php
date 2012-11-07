@@ -6,7 +6,7 @@
 			{{ HTML::nav_item('Settings') }}
 		</ul>
 		<ul class="nav pull-right">
-			<li class="dropdown">
+			<li class="dropdown uppercase">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					<span class="gravatar">{{ HTML::image(Auth::user()->gravatar(18)) }}</span>
 					<span>{{ Auth::user()->name }} {{ Auth::user()->surname }}</span>
