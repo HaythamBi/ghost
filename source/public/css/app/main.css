@@ -328,3 +328,15 @@ i {
 	position: relative;
 	left: -16px;
 }
+
+.navbar-content {
+	padding-top: 8px;
+}
+
+.navbar-content h1,
+.navbar-content h2,
+.navbar-content h3,
+.navbar-content h4,
+.navbar-content h5 {
+	font-weight: normal;
+}
