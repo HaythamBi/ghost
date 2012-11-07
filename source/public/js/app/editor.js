@@ -18,12 +18,15 @@ define(['ace/ace', 'showdown', 'storage', 'jquery', 'underscore'], function (ace
 
 			$('#fullscreen').on('click', function () {
 				$('body').toggleClass('fullscreen');
+				editor.resize();
 				if ($('body').hasClass('fullscreen')) {
 					$(this).html('&#59206;');
 				} else {
 					$(this).html('&#59204;');
 				}
 			});
+
+			window.editor = editor;
 
 			editor.getSession().setMode("ace/mode/markdown");
 			editor.getSession().setUseWrapMode(true);

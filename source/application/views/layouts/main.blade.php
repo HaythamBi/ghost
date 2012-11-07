@@ -10,7 +10,9 @@
 	</head>
 	<body>
 	@render('navbar.main')
+	<div id="main">
 	{{ $content }}
+	</div>
 	{{ Asset::container('footer')->scripts() }}
 	</body>
 </html>
