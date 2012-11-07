@@ -37,7 +37,7 @@
 
 </div>
 
-<div class="navbar navbar-inverse navbar-fixed-bottom">
+<div class="navbar navbar-inverse navbar-fixed-bottom navbar-footer">
 	<div class="navbar-inner">
 		<div class="pull-left">
 			<a href="#" class="btn btn-inverse"><i>&#59148;</i> News, Articles</a>

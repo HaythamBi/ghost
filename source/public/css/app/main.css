@@ -44,6 +44,14 @@ i {
 	text-align: right;
 }
 
+.navbar-main {
+	overflow: hidden;
+}
+
+#main {
+	margin-top: 54px;
+}
+
 .navbar-main .active {
 	position: relative;
 	text-align: center;
@@ -245,7 +253,8 @@ i {
 	background: white;
 }
 
-.fullscreen .navbar-main {
+.fullscreen .navbar-main,
+.fullscreen .navbar-footer {
 	display: none;
 }
 
