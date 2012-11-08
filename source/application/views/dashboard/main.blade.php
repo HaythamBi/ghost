@@ -21,7 +21,7 @@
 					<div class="block-title pull-left">{{ Config::get('application.location') }}</div>
 				</div>
 				<h1>{{ strftime('%I:%M') }} <small>{{ strftime('%p') }}</small></h1>
-				<hr>
+				<br>
 				<h4 class="muted">{{ strftime('%A') }}</h4>
 				<h3>{{ strftime('%e %B %Y') }}</h3>
 				<hr>
