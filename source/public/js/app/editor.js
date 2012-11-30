@@ -49,7 +49,7 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 			if ($('#editor').length === 0) return;
 
 			var self = this;
-			var editor = ace.edit("editor");
+			var editor = ace.edit('editor');
 			var preview = document.getElementById('preview');
 			var html;
 
@@ -62,7 +62,7 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 			editor.setTheme("ace/theme/textmate");
 			editor.setHighlightActiveLine(false);
 
-			editor.setValue(storage.get('test'));
+			editor.setValue(storage.get($('#editor').attr('class')));
 
 			editor.renderer.setShowPrintMargin(false);
 			editor.renderer.setShowGutter(false);
@@ -87,7 +87,7 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 			});
 
 			// fullscreen, keyboard shortcut
-			
+
 			Mousetrap.bind('ctrl+f', function(e) {
 				self.fullscreen();
 				return false;
@@ -98,10 +98,12 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 			editor.getSession().on('change', function(e) {
 				var html = self.html(editor.getValue());
 				preview.innerHTML = html;
-				storage.set('test', editor.getValue());
+				storage.set($('#editor').attr('class'), editor.getValue());
 				self.wordCount(html);
 				self.resize();
 			});
+
+			// [TODO] On successful save, storage for this document needs to be cleared
 
 			return editor;
 		}

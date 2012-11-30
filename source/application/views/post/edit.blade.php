@@ -26,7 +26,7 @@
 						<div class="block-title pull-left">Markdown</div>
 						<div class="block-icons pull-right"><strong><a class="muted" href="http://en.wikipedia.org/wiki/Markdown">?</a></strong></div>
 					</div>
-					<div id="editor"></div>
+					<div class="post-{{ $post->id }}-id" id="editor"></div>
 				</div>
 			</div>
 			<div class="span6">
@@ -35,7 +35,7 @@
 						<div class="block-title pull-left">Preview</div>
 						<div id="wordcount" class="block-icons align-right"></div>
 					</div>
-					<div id="preview"></div>
+					<div class="post-{{ $post->id }}-id" id="preview"></div>
 				</div>
 			</div>
 		</div>
