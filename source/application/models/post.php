@@ -37,7 +37,7 @@ class Post extends Eloquent {
 		$attributes = array_merge($defaults, $attributes);
 
 		$attributes['slug'] = self::create_slug($defaults['title']);
-		
+
 		$model = new static($attributes);
 
 		$success = $model->save();
@@ -78,7 +78,7 @@ class Post extends Eloquent {
 
 	public function get_edit_url()
 	{
-		$url = URL::to_route('Posts');
+		$url = URL::to_route('Post');
 		return $url . '/' . $this->id;
 	}
 

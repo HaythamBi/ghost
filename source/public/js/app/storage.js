@@ -5,6 +5,9 @@ define([], function () {
 		},
 		set: function (key, value) {
 			return localStorage.setItem(key, value);
+        },
+        remove: function (key) {
+            return localStorage.removeItem(key);
 		}
 	};
 });

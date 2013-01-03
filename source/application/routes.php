@@ -83,15 +83,15 @@ Route::get('admin/posts', array('as' => 'Posts', function ()
 
 # New Post
 
-Route::get('admin/posts/new', array('as' => 'New Post', function ()
+Route::get('admin/post', array('as' => 'New Post', function ()
 {
 	$post = Post::create();
-	return Redirect::to('admin/posts/' . $post->id);
+	return Redirect::to('admin/post/' . $post->id);
 }));
 
 # Edit Post
 
-Route::get('admin/posts/(:num)', function ($id)
+Route::get('admin/post/(:num)', array('as' => 'Post', function ($id)
 {
 	$post = Post::find($id);
 
@@ -102,7 +102,7 @@ Route::get('admin/posts/(:num)', function ($id)
 	return View::of('layout')
 		->with('view', $view)
 		->with('content', View::make('post.edit')->with('post', $post));
-});
+}));
 
 # Authors
 
@@ -111,16 +111,27 @@ Route::get('admin/authors', array('as' => 'Authors', function ()
 	$view = new \Laravel\Fluent(array(
 		'title' => 'Ghost - Authors'
 	));
+
+	$authors = Author::all();
+
 	return View::of('layout')
 		->with('view', $view)
-		->with('content', View::make('authors.main'));
+		->with('content', View::make('authors.main')->with('authors', $authors));
 }));
 
 # Edit Author
 
-Route::get('admin/authors/(:num)', function ($id)
+Route::get('admin/author/(:num)', function ($id)
 {
-	return 'author ' . $id;
+	$author = Author::find($id);
+
+	$view = new \Laravel\Fluent(array(
+		'title' => 'Ghost - Author - Edit'
+	));
+
+	return View::of('layout')
+		->with('view', $view)
+		->with('content', View::make('author.edit')->with('author', $author));
 });
 
 # Analytics

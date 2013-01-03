@@ -45,6 +45,10 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 		html: function (markdown) {
 			return marked(markdown);
 		},
+		save: function (content, callback) {
+			// $.post(content)
+			return callback();
+		},
 		initialize: function () {
 			if ($('#editor').length === 0) return;
 
@@ -101,9 +105,12 @@ define(['ace/ace', 'storage', 'jquery', 'underscore', 'mousetrap', 'marked'], fu
 				storage.set($('#editor').attr('class'), editor.getValue());
 				self.wordCount(html);
 				self.resize();
+				self.save(editor.getValue(), function() {
+					storage.remove($('#editor').attr('class'));
+				});
 			});
 
-			// [TODO] On successful save, storage for this document needs to be cleared
+			// [TODO] When navigating away, needs to clear story from storage
 
 			return editor;
 		}

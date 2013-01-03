@@ -173,6 +173,17 @@ i {
 	border-bottom: none;
 }
 
+.inline-post .feature-img {
+	display: inline-block;
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 64px;
+    -moz-border-radius: 64px;
+    -webkit-border-radius: 64px;
+}
+
 .inline-post .stats {
 	text-align: right;
 }

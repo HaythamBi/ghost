@@ -64,9 +64,9 @@ return array(
 		'mysql' => array(
 			'driver'   => 'mysql',
 			'host'     => 'localhost',
-			'database' => 'local.ghost.app',
+			'database' => 'ghost',
 			'username' => 'root',
-			'password' => 'password',
+			'password' => '',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),
